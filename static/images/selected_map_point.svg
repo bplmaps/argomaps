@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" id="current_count_iconz" viewBox="0 0 22 22">
+    <text x="20" y="35" class="small">44</text>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <polygon class="svg-fill" transform="translate(5.162414, 3.929500)" fill-rule="nonzero" points="10.4505989 5.17920705 10.4505989 3.77849662 0.645625919 3.77849662 0.645625919 5.17920705 4.147402 5.17920705 4.147402 7.09397821 1.43842802 11.835383 2.65424468 12.5301354 5.25396324 7.98062791 5.84226162 7.98062791 8.44198018 12.5301354 9.65779683 11.835383 6.94882286 7.09397821 6.94882286 5.17920705"></polygon>
+            <circle class="svg-fill" transform="translate(5.162414, 3.929500)" fill-rule="nonzero" cx="5.54811243" cy="2.37778619" r="1.40071043"></circle>
+            <circle class="svg-stroke" stroke="#D9D9D9" cx="10.7105263" cy="10.7105263" r="10.2105263"></circle>
+        </g>
+    </g>
+</svg>

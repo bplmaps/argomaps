@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="16px" viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-map_pin</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-map_pin" transform="translate(0.393617, 0.810874)">
+            <line x1="4.35638298" y1="2.71276596" x2="4.35638298" y2="13.6301362" id="Line" stroke="#979797" stroke-linecap="round"></line>
+            <circle id="Oval" fill="#A9A9A9" cx="4.35638298" cy="4.35638298" r="4.35638298"></circle>
+        </g>
+    </g>
+</svg>

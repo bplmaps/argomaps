@@ -57,53 +57,10 @@
     </div>
 
     <div id="app" class="home-content">
-      <div class="explore-by curated-stories-slider">
-        <h2>Explore by Stories</h2>
-        <div class="swiper curated-stories-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <a href="/story-forgotten-theater/">
-                <div
-                  class="swiper-image"
-                  style="
-                    background-image: url('/images/stories_forgotten_theater.jpg');
-                  "
-                ></div>
-                <p>The Forgotten Theater of the American Revolution</p>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="/explore/exhibits-0/">
-                <div
-                  class="swiper-image"
-                  style="
-                    background-image: url('/content/campaigns/facets_29_image_compress_100.jpg');
-                  "
-                ></div>
-                <p>Mapping the American Revolution</p>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="/explore/exhibits-1/">
-                <div
-                  class="swiper-image"
-                  style="
-                    background-image: url('/content/campaigns/facets_28_image_compress_100.jpg');
-                  "
-                ></div>
-                <p>George Washington's Maps</p>
-              </a>
-            </div>
-          </div>
-          <div class="curated-stories-swiper-pagination"></div>
-        </div>
-        <div
-          class="curated-stories-swiper-button-next swiper-button-next"
-        ></div>
-        <div
-          class="curated-stories-swiper-button-prev swiper-button-prev"
-        ></div>
-      </div>
+
+      <stories-swiper />
+
+
       <!-- no-slider explore-by-second -->
       <div class="explore-by curated-themes-slider">
         <h2>Explore by Themes</h2>
@@ -695,11 +652,13 @@
 <script>
 import home_data from "~/data/home_data.json";
 import Drawer from "~/components/drawer.vue";
+import StoriesSwiper from '~/components/storiesSwiper.vue';
 
 export default {
   name: "IndexPage",
   components: {
     Drawer,
+    StoriesSwiper,
   },
   asyncData({ route }) {
     return {

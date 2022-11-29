@@ -83,9 +83,7 @@
               <a href="/empires-and-nations/">
                 <div
                   class="explore-image"
-                  style="
-                    background-image: url('/images/explore_by_empirenation.jpg');
-                  "
+                  style="background-image: url('/images/explore_by_empirenation.jpg');"
                 ></div>
                 Empires and Nations
                 <br />
@@ -101,14 +99,11 @@
               <a href="/explore/4features-2/">
                 <div
                   class="explore-image"
-                  style="
-                    background-image: url('/images/explore_by_cartouche.jpg');
-                  "
+                  style="background-image: url('/images/explore_by_cartouche.jpg');"
                 ></div>
                 Cartouches
                 <br />
-                <span
-                  >{{
+                <span>{{
                     tag_groups["4features"].data[2].solr_ids_array.length
                   }}
                   results</span
@@ -119,14 +114,11 @@
               <a href="/explore/4features-5/">
                 <div
                   class="explore-image"
-                  style="
-                    background-image: url('/images/explore_by_animals.jpg');
-                  "
+                  style="background-image: url('/images/explore_by_animals.jpg');"
                 ></div>
                 Animals
                 <br />
-                <span
-                  >{{
+                <span>{{
                     tag_groups["4features"].data[5].solr_ids_array.length
                   }}
                   results</span

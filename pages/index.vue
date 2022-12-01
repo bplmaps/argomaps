@@ -651,6 +651,7 @@
 
 <script>
 import home_data from "~/data/home_data.json";
+import api_keys from "~/data/api_keys.json";
 import Drawer from "~/components/drawer.vue";
 import StoriesSwiper from '~/components/storiesSwiper.vue';
 
@@ -947,16 +948,12 @@ export default {
       const start = performance.now();
 
       const rasterLayer = new ol.layer.Tile({
-        // var Stadia_AlidadeSmooth = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
-        // 	maxZoom: 20,
-        // 	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-        // });
         source: new ol.source.TileJSON({
-          // url: 'https://a.tiles.mapbox.com/v3/aj.1x1-degrees.json?secure=1',
-          url: "https://tiles.stadiamaps.com/styles/alidade_smooth/rendered.json",
-          crossOrigin: "",
-        }),
-      });
+        url: `https://api.maptiler.com/maps/voyager-v2/tiles.json?key=${api_keys.maptiler}`,
+        tileSize: 512,
+        crossOrigin: 'anonymous'
+      })
+    });
 
       this.map = new ol.Map({
         layers: [rasterLayer],

@@ -2,34 +2,7 @@
 
 /* TODO: replace <a> with <button> in most cases; require changing of HTML and many styles HELLO WORLD */
 
-/* Satoshi */
-  @font-face {
-	font-family: 'Satoshi';
-	src: url('//cdn.fontshare.com/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff2') format('woff2'),
-		 url('//cdn.fontshare.com/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff') format('woff'),
-		 url('//cdn.fontshare.com/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.ttf') format('truetype');
-	font-weight: 400;
-	font-display: swap;
-	font-style: normal;
-  }
-  @font-face {
-	font-family: 'Satoshi';
-	src: url('//cdn.fontshare.com/wf/P2LQKHE6KA6ZP4AAGN72KDWMHH6ZH3TA/ZC32TK2P7FPS5GFTL46EU6KQJA24ZYDB/7AHDUZ4A7LFLVFUIFSARGIWCRQJHISQP.woff2') format('woff2'),
-		 url('//cdn.fontshare.com/wf/P2LQKHE6KA6ZP4AAGN72KDWMHH6ZH3TA/ZC32TK2P7FPS5GFTL46EU6KQJA24ZYDB/7AHDUZ4A7LFLVFUIFSARGIWCRQJHISQP.woff') format('woff'),
-		 url('//cdn.fontshare.com/wf/P2LQKHE6KA6ZP4AAGN72KDWMHH6ZH3TA/ZC32TK2P7FPS5GFTL46EU6KQJA24ZYDB/7AHDUZ4A7LFLVFUIFSARGIWCRQJHISQP.ttf') format('truetype');
-	font-weight: 500;
-	font-display: swap;
-	font-style: normal;
-  }
-  @font-face {
-	font-family: 'Satoshi';
-	src: url('//cdn.fontshare.com/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2') format('woff2'),
-		 url('//cdn.fontshare.com/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff') format('woff'),
-		 url('//cdn.fontshare.com/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.ttf') format('truetype');
-	font-weight: 700;
-	font-display: swap;
-	font-style: normal;
-  }
+
 /* global stuff */
 * {
 	box-sizing: border-box;
@@ -155,8 +128,7 @@ img.byte_img_review {
 body {
 	margin: 0;
 	padding: 0;
-	/* font-family: 'Inter', sans-serif; */
-	font-family: 'Satoshi', sans-serif;
+	font-family: 'Inter', 'Georgia', serif;
 	background-color: #FCFCFC;
 }
 p {
@@ -320,7 +292,7 @@ header .header-wrapper nav .main-nav .nav-item {
 	width: min-content;
 }
 header .header-wrapper nav a {
-	font-family: 'Libre Baskerville';
+	font-family: 'ivypresto-display';
 	font-size: 16px;
 	font-weight: 900;
 	color: #4E798D;
@@ -344,7 +316,7 @@ header .header-wrapper nav a {
 	cursor: pointer;
 }
 .header-wrapper nav .dropdown-content .nav-dropdown a {
-	font-family: 'Satoshi', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 15px;
 	font-weight: 400;
 	color: #FFFFFF95;
@@ -361,7 +333,7 @@ footer .header-search .search input {
 	background-color: #F9F9F9;
 	border: .5px solid #4E798D;
 	border-radius: 5px;
-	font-family: 'Satoshi', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 14px;
 }
 header .header-search {
@@ -372,13 +344,13 @@ header .header-search {
 	display: none;
 }
 header .header-search input {
-	font-family: 'Satoshi', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 14px;
 	color: #FFFFFF90;
 	background-color: #F9F9F930;
 }
 header .header-search input::placeholder {
-	font-family: 'Satoshi', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 14px;
 	color: #FFFFFF90;
 }
@@ -490,7 +462,7 @@ header .header-wrapper .header-search a {
 	margin: auto;
     margin-top: 30px;
     width: 50%;
-    font-family: 'Libre Baskerville';
+    font-family: 'ivypresto-display';
     font-size: 30px;
     color: #EA6501;
     line-height: 36px;
@@ -556,7 +528,7 @@ header .header-wrapper .header-search a {
 	background: #4A798D;
 }
 .explore-by h2 {
-	font-family: 'Raleway';
+	font-family: 'ivypresto-display';
 	font-size: 25px;
 	font-weight: 600;
 	color: #4E798D;
@@ -604,7 +576,7 @@ header .header-wrapper .header-search a {
 	margin-bottom: 15px;
 }
 .explore-by .map-container p {
-	font-family: 'Raleway';
+	font-family: 'ivypresto-display';
 	font-weight: 400;
 	margin: 0 15px 0 0;
 }
@@ -917,7 +889,7 @@ header .header-wrapper .header-search a {
 	width: calc(100% - 120px);
 }
 .filter .filter-explore-by h1 {
-	font-family: Raleway;
+	font-family: ivypresto-display;
 	font-size: 26px;
 	font-weight: 600;
 	margin: 0 25px 10px 0;
@@ -978,7 +950,7 @@ header .header-wrapper .header-search a {
 	margin-right: 5px;
 }
 .filter .filter-explore-by .filter-view-switch select {
-	font-family: 'Satoshi', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 13px;
 	font-weight: 300;
 	padding: 7px;
@@ -1003,7 +975,7 @@ header .header-wrapper .header-search a {
 }
 .filter a.button-like {
 	padding: 10px 15px;
-	font-family: 'Satoshi', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 14px;
 }
 .filter a.button-like.dark {
@@ -1435,7 +1407,7 @@ header .header-wrapper .header-search a {
 	line-height: 22px;
 }
 .map-result h1 {
-	font-family: Raleway;
+	font-family: ivypresto-display;
 	font-size: 26px;
 	font-weight: 700;
 	margin: 20px 0;
@@ -1470,7 +1442,7 @@ header .header-wrapper .header-search a {
     border: unset;
     color: #FFFFFF;
     border-radius: 5px;
-    font-family: 'Satoshi';
+    font-family: 'Inter';
     font-size: 14px;
     padding: 9px 30px 9px 15px;
 	position: relative;
@@ -1633,7 +1605,7 @@ header .header-wrapper .header-search a {
 	margin: 35px 200px 200px 225px;
 }
 .about h1 {
-	font-family: Raleway;
+	font-family: ivypresto-display;
 	font-size: 26px;
 	font-weight: 600;
 	margin: 0 20px 0 0;
@@ -1641,7 +1613,7 @@ header .header-wrapper .header-search a {
 }
 
 .about p {
-	font-family: 'Satoshi';
+	font-family: 'Inter';
 	font-size: 16px;
 	font-weight: 300;
 	line-height: normal;
@@ -1801,7 +1773,7 @@ header .header-wrapper .header-search a {
 	width: 65px;
 	height: 25px;
 	padding: 5px;
-	font-family: 'Satoshi', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 14px;
 	font-weight: 300;
 }
@@ -1850,7 +1822,7 @@ input::-webkit-inner-spin-button {
 	border: .25px solid #979797;
 	background-color: #F5F5F5;
 	color: #000000;
-	font-family: 'Satoshi', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 14px;
 	text-transform: capitalize;
 }
@@ -1862,7 +1834,7 @@ input::-webkit-inner-spin-button {
 	border: .25px solid #979797;
 	background-color: #F5F5F5;
 	color: #000000;
-	font-family: 'Satoshi', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 14px;
 }
 .advanced-search .search-filter button[type="submit"] {
@@ -1872,7 +1844,7 @@ input::-webkit-inner-spin-button {
 	border-radius: 5px;
 	background-color: #4E798D;
 	color: #FFFFFF;
-	font-family: 'Satoshi', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 14px;
 	font-weight: 500;
 }
@@ -1987,7 +1959,7 @@ input::-webkit-inner-spin-button {
 .advanced-search .search-results h2 {
 	margin: 0;
 	flex-grow: 1;
-	font-family: Raleway;
+	font-family: ivypresto-display;
 	font-size: 23px;
 	font-weight: 600;
 }
@@ -2023,7 +1995,7 @@ input::-webkit-inner-spin-button {
 	background-color: #EEEEEE;
 	border: .25px solid #979797;
 	border-radius: 5px;
-	font-family: 'Satoshi', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-weight: 300;
 	cursor: pointer;
 }
@@ -2629,7 +2601,7 @@ summary::-webkit-details-marker {display: none; }
 }
 .ol-attribution button {
 	background-image: none;
-	font-family: 'Satoshi', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 17px;
 	font-weight: 400;
 	color: #000;
@@ -2711,7 +2683,7 @@ summary::-webkit-details-marker {display: none; }
 	padding: 5px;
 	border: .25px solid #979797;
 	border-radius: 5px;
-	font-family: 'Satoshi', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 13px;
 	color: rgba(0, 0, 0, .6);
 }
@@ -3274,7 +3246,7 @@ footer .site-map ul li a {
 	color: rgba(0,0,0,0.7);
 }
 footer .site-map ul li.nav-item > a {
-	font-family: 'Satoshi', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 16px;
 	font-weight: 600;
 	color: #4E798D;
@@ -3288,7 +3260,7 @@ footer .site-map ul li.nav-item > a {
 }
 footer .site-map ul li.nav-item > p.link-like {
 	margin-top: 3px;
-	font-family: 'Satoshi', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 16px;
 	font-weight: 600;
 	color: #4E798D;

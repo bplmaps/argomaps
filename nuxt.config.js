@@ -24,13 +24,12 @@ export default {
 		],
 		link: [
 			{ rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-			{ rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
-			{ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap' },
-			{ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700' },
-			{ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Raleway:wght@400;700' },
+			{ rel: 'preconnect', href: 'https://use.typekit.net' },
+			{ rel: 'preconnect', href: 'https://rsms.me/' },
+			{ rel: 'stylesheet', href: 'https://use.typekit.net/rok7eea.css' },
+			{ rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' },
 			{ rel: 'stylesheet', href: '/assets/swiper-bundle.min.css' },
 			{ rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@main/dist/en/v7.0.0/legacy/ol.css' },
-			{ rel: 'stylesheet', href: '/assets/main.css' },
 			{ rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity: 'sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin: 'anonymous' },
 			{ rel: 'stylesheet', href: '/assets/tify.css' }
 		],
@@ -42,7 +41,7 @@ export default {
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
 	css: [
-		// '/assets/main.css',
+		'~/static/assets/styles/main.css',
 	],
 	//generate: { fallback: '404.html' },
 

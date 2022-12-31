@@ -155,6 +155,8 @@
 
 <style>
 
+@import 'tify/dist/tify.css';
+
 /* start map-result page */
 .map-result {
 	position: relative;
@@ -386,8 +388,7 @@ h1 > .subtitle {
 <script>
 // import airports from '~/data/airports.js'
 import home_data from '~/data/maps_extended.json'
-// import 'tify'
-// import 'tify/dist/tify.css'
+
 
 export default {
 	name: 'MapsPage',

@@ -32,7 +32,7 @@
 					<tr>
 						<th>Date</th>
 						<td>
-							<p>{{ metadataAPIvariables.response.document.date_range }}</p>
+							<p v-for="date in metadataAPIvariables.response.document.date_tsim">{{ date }}</p>
 						</td>
 					</tr>
 					<tr v-if="metadataAPIvariables.response.document.note_resp_tsim">
@@ -222,7 +222,7 @@
 
 h1 {
 	font-family: ivypresto-display;
-	font-size: 3.0 rem;
+	font-size: 3.25rem;
 	font-weight: 700;
 	margin: 15px 0;
 }
@@ -230,7 +230,7 @@ h1 {
 h1>.subtitle {
 	font-family: ivypresto-display;
 	font-style: italic;
-	font-size: 2.6 rem;
+	font-size: 2.6rem;
 	color: #979797
 }
 
@@ -456,7 +456,7 @@ export default {
 		this.metadataAPIvariables = await fetch(`https://collections.leventhalmap.org/search/${this.$nuxt.context.params.solr_id}.json`)
 			.then(d => d.json());
 	},
-
+	fetchOnServer: false, //* change this when ready to do SEO
 	mounted() {
 			new Tify({
 				container: '#tify',

@@ -23,7 +23,6 @@ export default {
 			{ hid: 'og:url', name: 'og:url', content: 'this.project.url' },
 		],
 		link: [
-			{ rel: 'preconnect', href: 'https://fonts.googleapis.com' },
 			{ rel: 'preconnect', href: 'https://use.typekit.net' },
 			{ rel: 'preconnect', href: 'https://rsms.me/' },
 			{ rel: 'stylesheet', href: 'https://use.typekit.net/rok7eea.css' },
@@ -31,7 +30,6 @@ export default {
 			{ rel: 'stylesheet', href: '/assets/swiper-bundle.min.css' },
 			{ rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@main/dist/en/v7.0.0/legacy/ol.css' },
 			{ rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity: 'sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin: 'anonymous' },
-			{ rel: 'stylesheet', href: '/assets/tify.css' }
 		],
 		script: [
 			{ type: 'text/javascript', src: '/assets/swiper-bundle.min.js', body: true },

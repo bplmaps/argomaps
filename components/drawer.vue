@@ -26,16 +26,6 @@ export default {
 		'drawer_results_visible',
 		'maps',
 	],
-	head () {
-		return {
-		title: (this.person) ? this.person.name + ' Information' : 'People',
-			meta: [{
-				hid: 'description',
-				name: 'description',
-				content: (this.person) ? 'Detailed information about ' + this.person.name : 'People Description',
-			}]
-		}
-    },
 	asyncData ({ route }) {
 
 		var person = '';
@@ -59,7 +49,6 @@ export default {
 	beforeMount() {
 	},
 	mounted(){
-		// this.paintMapsSlider();
 	},
 	methods: {
 		showMaps: function(which) {

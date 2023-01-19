@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* TODO: replace <a> with <button> in most cases; require changing of HTML and many styles HELLO WORLD */
 
 

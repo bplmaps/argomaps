@@ -11,156 +11,76 @@
 			<h1>Something went wrong loading the metadata for this record.</h1>
 		</div>
 		<div v-else>
-
-			<div class="map-titles">
-				<h1>{{ metadataAPIvariables.response.document.title_info_primary_tsi }} <span class="subtitle"
+			<div class="container">
+				<div class="px-8">
+					<h1 class="text-3xl">{{ metadataAPIvariables.response.document.title_info_primary_tsi }} <span class="text-italic text-gray-600"
 						v-if="metadataAPIvariables.response.document.title_info_primary_subtitle_tsi">:
 						{{ metadataAPIvariables.response.document.title_info_primary_subtitle_tsi }}</span></h1>
-				<p v-html="metadataAPIvariables.response.document.abstract_tsi"></p>
-			</div>
-			<div class="related-material">
 
-				<h2>Metadata</h2>
+						<p class="pb-4 text-gray-800" v-html="metadataAPIvariables.response.document.abstract_tsi"></p>
+				</div>
 
-				<table class="meta-information">
-					<tr v-for="role, role_key in metadataAPIvariables.response.document.name_role_tsim" :key="role_key">
-						<th>{{ role }}</th>
-						<td>
-							<p>{{ metadataAPIvariables.response.document.name_tsim[role_key] }}</p>
-						</td>
-					</tr>
-					<tr>
-						<th>Date</th>
-						<td>
-							<p v-for="date in metadataAPIvariables.response.document.date_tsim">{{ date }}</p>
-						</td>
-					</tr>
-					<tr v-if="metadataAPIvariables.response.document.note_resp_tsim">
-						<th>Name on Item</th>
-						<td>
-							<p>{{ metadataAPIvariables.response.document.note_resp_tsim }}</p>
-						</td>
-					</tr>
-					<tr v-if="metadataAPIvariables.response.document.publisher_tsi">
-						<th>Publisher</th>
-						<td>
-							<p>{{ metadataAPIvariables.response.document.publisher_tsi }}</p>
-						</td>
-					</tr>
-					<tr>
-						<th>Scale</th>
-						<td>
-							<p>{{ metadataAPIvariables.response.document.scale_tsim }}</p>
-						</td>
-					</tr>
-					<tr>
-						<th>Language</th>
-						<td>
-							<p>{{ metadataAPIvariables.response.document.lang_term_ssim }}</p>
-						</td>
-					</tr>
-					<!-- <tr>
-				<th>Format??</th>
-				<td>
-					<p>Maps/Atlases??</p>
-				</td>
-			</tr> -->
-					<tr v-if="metadataAPIvariables.response.document.identifier_local_other_tsim">
-						<th>Identifier</th>
-						<td>
-							<!-- <p>{{ metadataAPIvariables.response.document.identifier_local_other_tsim.split(',').join(', ') }}</p> -->
-						</td>
-					</tr>
-					<tr>
-						<th>Location</th>
-						<td>
-							<p>{{ metadataAPIvariables.response.document.physical_location_ssim }}</p>
-						</td>
-					</tr>
-					<tr>
-						<th>Collection (local)</th>
-						<td>
-							<p>{{ metadataAPIvariables.response.document.related_item_host_ssim }}</p>
-						</td>
-					</tr>
-					<tr>
-						<th>Subjects</th>
-						<td>
-							<p>{{ metadataAPIvariables.response.document.subject_topic_tsim }}</p>
-						</td>
-					</tr>
-					<tr>
-						<th>Places</th>
-						<td>
-							<p>
-								North and Central America (continent), United States (country), Iowa (state) </p>
-						</td>
-					</tr>
-					<tr>
-						<th>Extent</th>
-						<td>
-							<p>{{ metadataAPIvariables.response.document.extent_tsi }}</p>
-						</td>
-					</tr>
-					<tr>
-						<th>Terms of Use:</th>
-						<td>
-							<p>
-								{{ metadataAPIvariables.response.document.rights_ss }}<br />
-								{{ metadataAPIvariables.response.document.license_ss }}
-							</p>
-						</td>
-					</tr>
-					<tr v-if="metadataAPIvariables.response.document.note_tsim">
-						<th>Notes</th>
-						<td>
-							<p>{{ metadataAPIvariables.response.document.note_tsim }}</p>
-						</td>
-					</tr>
-				</table>
 			</div>
 
-			<div class="meta-info">
-				<h2>Tagged with</h2>
-				<ul class="tagged-with">
-					<li v-for="tag, tag_key in metadataAPIvariables.response.document.map_tags" :key="tag_key">{{ tag }}</li>
-				</ul>
+			<div class="container">
+				<div class="block md:flex md:flex-row px-8">
+					<div class="w-full md:w-1/2">
+						<div class="pr-4">
+							<h2
+								class="text-lg uppercase tracking-wider font-bold bg-gray-600 text-white inline-block px-2 py-1 mb-4">
+								Metadata</h2>
+							<MetadataBlock :metadata="metadataAPIvariables.response.document" />
+						</div>
+					</div>
+					<div class="w-full md:w-1/2">
+						<div class="mb-6">
+							<h2
+								class="text-lg uppercase tracking-wider font-bold bg-gray-600 text-white inline-block px-2 py-1 mb-4">
+								Collection Information</h2>
+							<div v-if="metadataAPIvariables.response.document.related_item_isreferencedby_ssm">
+								<a :href="JSON.parse(metadataAPIvariables.response.document.related_item_isreferencedby_ssm[0]).url"
+									target="_blank"
+									class="border border-blue-500 hover:bg-blue-50 px-2 py-1 rounded">See this object’s
+									record at {{ metadataAPIvariables.response.document.institution_name_ssi }}</a>
+							</div>
+						</div>
 
-				<h2>Download</h2>
-				<a :href="'https://iiif.digitalcommonwealth.org/iiif/2/' + metadataAPIvariables.response.document.exemplary_image_ssi + '/full/full/0/default.jpg'"
-					class="button-like" :download="metadataAPIvariables.response.document.exemplary_image_ssi + '_thumbnail_300.jpg'"
-					target="_blank">Large
-					Image</a>
-				<a :href="'https://bpldcassets.blob.core.windows.net/derivatives/images/' + metadataAPIvariables.response.document.exemplary_image_ssi + '/image_thumbnail_300.jpg'"
-					class="button-like" :download="metadataAPIvariables.response.document.exemplary_image_ssi + '_thumbnail_300.jpg'"
-					target="_blank">Small
-					Image</a>
-				<!-- <img src="/images/explore_by_1-FPO.png"> -->
 
-				<!--		
-		<div class="maps">
-            <h2>More maps {{metadataAPIvariables.response.document.publisher_tsi}}</h2>
-            <ul>
-                <li>
-                    <div class="related-map" style="background-image: url(../assets/images/map_result_map_1.jpg);"></div>
-                    <p>A correct plan of the environs of Quebec, and of the battle fought on the 13th September, 1759 : together with a particular detail of the...</p>
-                </li>
-                <li>
-                    <div class="related-map" style="background-image: url(../assets/images/map_result_map_2.jpg);"></div>
-                    <p>A map of the several dispositions of the English Fleet & Army on the River St. Laurence to the taking of Quebec</p>
-                </li>
-                <li>
-                    <div class="related-map" style="background-image: url(../assets/images/map_result_map_3.jpg);"></div>
-                    <p>The coast of New Schotland, New England, the gulph and river of St. Laurence : the islands of New Foundland, Cape Breton, St....</p>
-                </li>
-                <li>
-                    <div class="related-map" style="background-image: url(../assets/images/map_result_map_4.jpg);"></div>
-                    <p>Plan von Quebec</p>
-                </li>
-            </ul>
-        </div>
-		-->
+						<div class="mb-6">
+							<h2
+								class="text-lg uppercase tracking-wider font-bold bg-gray-600 text-white inline-block px-2 py-1 mb-4">
+								Tags</h2>
+						</div>
+
+						<div class="mb-6">
+							<h2
+								class="text-lg uppercase tracking-wider font-bold bg-gray-600 text-white inline-block px-2 py-1 mb-4">
+								Downloads</h2>
+						</div>
+
+						<div class="mb-6">
+							<h2
+								class="text-lg uppercase tracking-wider font-bold bg-gray-600 text-white inline-block px-2 py-1 mb-4">
+								Digital Library</h2>
+								<div>
+									<a :href="`https://collections.leventhalmap.org/search/${$nuxt.context.params.solr_id}/manifest.json`"
+									target="_blank"
+									class="border border-blue-500 hover:bg-blue-50 px-2 py-1 rounded">IIIF Manifest</a>
+									<a :href="`https://collections.leventhalmap.org/search/${$nuxt.context.params.solr_id}?format=json`"
+									target="_blank"
+									class="border border-blue-500 hover:bg-blue-50 px-2 py-1 rounded">JSON Metadata</a>
+								</div>
+
+						</div>
+
+
+					</div>
+
+				</div>
 			</div>
+
+
+			
 
 		</div>
 
@@ -238,6 +158,7 @@ h1>.subtitle {
 .map-result .related-material,
 .map-result .meta-info {
 	width: calc(50% - 60px);
+	margin: auto;
 }
 
 .map-result .meta-info {
@@ -433,6 +354,8 @@ h1>.subtitle {
 
 <script>
 
+import MetadataBlock from '~/components/MetadataBlock.vue';
+
 export default {
 	name: 'MapsPage',
 	head() {
@@ -445,6 +368,9 @@ export default {
 			}]
 		}
 	},
+	components: {
+		MetadataBlock
+	},
 	data() {
 		return {
 			fetchError: false,
@@ -456,33 +382,34 @@ export default {
 		this.metadataAPIvariables = await fetch(`https://collections.leventhalmap.org/search/${this.$nuxt.context.params.solr_id}.json`)
 			.then(d => d.json());
 	},
+
 	fetchOnServer: false, //* change this when ready to do SEO
 	mounted() {
-			new Tify({
-				container: '#tify',
-				manifestUrl: 'https://collections.leventhalmap.org/search/' + this.$nuxt.context.params.solr_id + '/manifest.json',
-				viewer: {
-					// this area is what's covered by OpenSeadragon: https://openseadragon.github.io/docs/OpenSeadragon.html#.Options
-					// zoomPerScroll: 1, // to make it faster or slower
-					// each of these are per-device-type
-					gestureSettingsMouse: { scrollToZoom: false, clickToZoom: true, dblClickToZoom: true, pinchToZoom: false, flickEnabled: false, dragToPan: true },
-					// gestureSettingsTouch:   { scrollToZoom: false, clickToZoom: false, dblClickToZoom: true,  pinchToZoom: true,  flickEnabled: true,  flickMinSpeed: 120, flickMomentum: 0.25, pinchRotate: false, dragToPan: true },
-					// gestureSettingsPen:     { scrollToZoom: false, clickToZoom: true,  dblClickToZoom: false, pinchToZoom: false, flickEnabled: false, flickMinSpeed: 120, flickMomentum: 0.25, pinchRotate: false, dragToPan: true },
-					// gestureSettingsUnknown: { scrollToZoom: false, clickToZoom: false, dblClickToZoom: true, pinchToZoom: true, flickEnabled: true, flickMinSpeed: 120, flickMomentum: 0.25, pinchRotate: false, dragToPan: true },
-				},
-				// language: 'en',
-				// pageLabelFormat: 'P (L)',
-				// pages: [1],
-				// pan: { x: .45, y: .6 },
-				// translationsDirUrl: '/translations/tify',
-				// urlQueryKey: 'tify',
-				// urlQueryParams: ['pages'],
-				// view: '',
-				// viewer: {
-				// 	immediateRender: false,
-				// },
-				// zoom: 1.2,
-			})
+		new Tify({
+			container: '#tify',
+			manifestUrl: 'https://collections.leventhalmap.org/search/' + this.$nuxt.context.params.solr_id + '/manifest.json',
+			viewer: {
+				// this area is what's covered by OpenSeadragon: https://openseadragon.github.io/docs/OpenSeadragon.html#.Options
+				// zoomPerScroll: 1, // to make it faster or slower
+				// each of these are per-device-type
+				gestureSettingsMouse: { scrollToZoom: false, clickToZoom: true, dblClickToZoom: true, pinchToZoom: false, flickEnabled: false, dragToPan: true },
+				// gestureSettingsTouch:   { scrollToZoom: false, clickToZoom: false, dblClickToZoom: true,  pinchToZoom: true,  flickEnabled: true,  flickMinSpeed: 120, flickMomentum: 0.25, pinchRotate: false, dragToPan: true },
+				// gestureSettingsPen:     { scrollToZoom: false, clickToZoom: true,  dblClickToZoom: false, pinchToZoom: false, flickEnabled: false, flickMinSpeed: 120, flickMomentum: 0.25, pinchRotate: false, dragToPan: true },
+				// gestureSettingsUnknown: { scrollToZoom: false, clickToZoom: false, dblClickToZoom: true, pinchToZoom: true, flickEnabled: true, flickMinSpeed: 120, flickMomentum: 0.25, pinchRotate: false, dragToPan: true },
+			},
+			// language: 'en',
+			// pageLabelFormat: 'P (L)',
+			// pages: [1],
+			// pan: { x: .45, y: .6 },
+			// translationsDirUrl: '/translations/tify',
+			// urlQueryKey: 'tify',
+			// urlQueryParams: ['pages'],
+			// view: '',
+			// viewer: {
+			// 	immediateRender: false,
+			// },
+			// zoom: 1.2,
+		})
 	},
 	methods: {
 		paintMapsSlider: function () {

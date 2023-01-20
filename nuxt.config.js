@@ -41,7 +41,10 @@ export default {
 	css: [
 		'~/static/assets/styles/main.css',
 	],
-	//generate: { fallback: '404.html' },
+	generate: { 
+		'concurrency': 50,
+		'interval': 500
+	 },
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 	plugins: [

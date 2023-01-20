@@ -7,9 +7,8 @@
 		<div v-if="$fetchState.pending">
 			<h1>Loading this collection record ...</h1>
 		</div>
-		<div v-else-if="$fetchState.error">
-			<h1>Something went wrong loading the metadata for this record.</h1>
-		</div>
+
+		
 		<div v-else>
 			<div class="container">
 				<div class="px-8">
@@ -383,7 +382,7 @@ export default {
 			.then(d => d.json());
 	},
 
-	fetchOnServer: function() { return this.$nuxt.context.app.head.title === 'ARGO - STAGING' ? false : true },
+	// fetchOnServer: function() { return this.$nuxt.context.app.head.title === 'ARGO - STAGING' ? false : true },
 
 	mounted() {
 		new Tify({

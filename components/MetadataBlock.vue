@@ -24,25 +24,19 @@
 							<p>{{ metadata.publisher_tsi }}</p>
 						</td>
 					</tr>
-					<tr>
+					<tr v-if="metadata.scale_tsim">
 						<th>Scale</th>
 						<td>
 							<p>{{ metadata.scale_tsim[0] }}</p>
 						</td>
 					</tr>
-					<tr>
+					<tr v-if="metadata.lang_term_ssim">
 						<th>Language</th>
 						<td>
 							<p>{{ metadata.lang_term_ssim.join("; ") }}</p>
 						</td>
 					</tr>
 
-					<tr v-if="metadata.identifier_local_other_tsim">
-						<th>Identifier</th>
-						<td>
-							<p>{{ metadata.identifier_local_other_tsim.join('; ') }}</p>
-						</td>
-					</tr>
 					<tr>
 						<th>Location</th>
 						<td>

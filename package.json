@@ -6,7 +6,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "generate-staging": "nuxt generate --config-file nuxt-staging.config.js"
   },
   "dependencies": {
     "core-js": "^3.19.3",

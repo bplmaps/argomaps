@@ -383,7 +383,8 @@ export default {
 			.then(d => d.json());
 	},
 
-	fetchOnServer: false, //* change this when ready to do SEO
+	fetchOnServer: function() { return this.$nuxt.context.app.head.title === 'ARGO - STAGING' ? false : true },
+
 	mounted() {
 		new Tify({
 			container: '#tify',

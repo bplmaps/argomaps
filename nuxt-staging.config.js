@@ -1,10 +1,11 @@
 export default {
 	// Target: https://go.nuxtjs.dev/config-target
 	target: 'static',
+	fetchOnServer: false,
 
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
-		title: 'ARGO · American Revolutionary Geographies Online',
+		title: 'ARGO - STAGING',
 		htmlAttrs: {
 		lang: 'en'
 		},
@@ -16,11 +17,11 @@ export default {
 			{
 				hid: 'description',
 				name: 'description',
-				content: 'Discover the historical geography of the American Revolutionary War era through maps, rich interpretive essays, and interactives. · A project of the Leventhal Map & Education Center at the Boston Public Library and the Washington Library at Mount Vernon.'
+				content: 'Leveraging new technology and the recent drive by many museums, libraries, and archives to digitize their collections, the portal will collate digitized maps of North America made between 1750 and 1800 into a single user-friendly portal.'
 			},
-			{ hid: 'og:title', name: 'og:title', content: 'ARGO · American Revolutionary Geographies Online' },
-			{ hid: 'og:image', name: 'og:image', content: 'https://iiif.digitalcommonwealth.org/iiif/2/commonwealth:w9505r968/250,72,15744,9720/,1200/0/default.jpg' },
-			{ hid: 'og:url', name: 'og:url', content: 'https://www.argomaps.org' },
+			{ hid: 'og:title', name: 'og:title', content: 'STAGING' },
+			{ hid: 'og:image', name: 'og:image', content: 'STAGING' },
+			{ hid: 'og:url', name: 'og:url', content: 'STAGING' },
 		],
 		link: [
 			{ rel: 'preconnect', href: 'https://use.typekit.net' },
@@ -41,7 +42,7 @@ export default {
 	css: [
 		'~/static/assets/styles/main.css',
 	],
-	//generate: { fallback: '404.html' },
+
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 	plugins: [

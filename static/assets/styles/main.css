@@ -866,7 +866,7 @@ header .header-wrapper .header-search a {
 .explore-by.explore-by-institution .explore-slide img {
 	max-height: 50px;
 	max-width: 130px;
-	width: 100%;
+	/* width: 100%; */
 	margin-bottom: 10px;
 }
 .explore-by.explore-by-institution .explore-slide > div {
@@ -2778,6 +2778,15 @@ header {
 
 #results-bar summary {
 	padding: 11px 21px;
+}
+#results-bar summary span {
+	display:inline-block;
+	width: 34px;
+	height: 34px;
+	border-radius: 20px;
+	background-color: #6B9AB1;
+	padding: 3px;
+	text-align: center;
 }
 #results-bar summary:after {
 	content: '';

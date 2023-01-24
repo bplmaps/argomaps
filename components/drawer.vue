@@ -1,6 +1,6 @@
 <template>
 	<details open v-if="ready" id="results-bar"  :class="['show',(drawer_results_visible.length) ? 'results-visible' : '']">
-		<summary>{{drawer_results_visible.length}} Result<template v-if="drawer_results_visible.length != 1">s</template></summary>
+		<summary><span>{{drawer_results_visible.length}}</span> Result<template v-if="drawer_results_visible.length != 1">s</template></summary>
 		<div id="results" :class="view_class+'-view'">
 			<ul class="results-views">
 				<li :class="['results-view-option',{'active' : view_class=='list'}]" id="list-view" @click="view_class = 'list'">List</li>
@@ -49,6 +49,13 @@ export default {
 	beforeMount() {
 	},
 	mounted(){
+	},
+	watch: {
+		drawer_results_visible: function(status) {
+			console.log(">drawer_results_visible change",status);
+			document.getElementById('results-bar').open = true;
+			// if(status)	this.loadRecords(); //reload records for this plugin
+		}
 	},
 	methods: {
 		showMaps: function(which) {

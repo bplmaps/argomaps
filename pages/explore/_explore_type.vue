@@ -3,7 +3,7 @@
 	<div>
 		<div v-if="current_tag_data && current_tag_data.name" class="filter">
 			<div class="filter-explore-by">
-				<h1>{{current_tag_data.name}}</h1>
+				<h1>{{current_tag_data.category_show_name}}</h1>
 				<ul>
 					<li v-for="tag, tag_index in tags" :key="tag_index" @click="showByFilter(tag_index)" :class="(tag_index==filter_by) ? 'active' : ''">{{tag.name}}</li>
 				</ul>
@@ -16,6 +16,7 @@
 				</div>
 			</div>
 			<h2>{{this.tags[this.filter_by].name}}</h2>
+			<p>{{this.tags[this.filter_by]['short_description']}}</p>
 			<ul :class="'filter-list '+filter_view+'-view'">
 				<template v-for="person, person_index in this.tags[this.filter_by].solr_ids_array">
 					<li v-if="maps[person]" :key="person_index" class="filter-result">

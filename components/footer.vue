@@ -56,7 +56,7 @@
 		</nav>
 		<div class="footer-logos">
 			<div class="logo"></div>
-			<!-- <div class="logo"></div> -->
+			<div class="logo"></div>
 		</div>
 		<div class="footer-credits" data-embed="Footer: above credits">
 			<div class="credit" data-embed="Footer: credits left area"><p>

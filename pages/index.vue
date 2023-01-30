@@ -1,7 +1,6 @@
 <template>
   <div>
     <!-- version 2 -->
-    <div id="beta-warning" v-if="betaWarningVisibility">👋 ARGO is in public beta. Please feel free to explore, though we're currently developing the site. <span id="close-beta-warning" @click="betaWarningVisibility=false">Close message</span></div>
     <svg
       width="0px"
       height="0px"
@@ -618,27 +617,8 @@
 </template>
 
 <style>
-#beta-warning {
-  width: 100%;
-  text-align: center;
-  padding: 10px 0;
-  font-weight: bold;
-  color: white;
-  background: rgb(217, 51, 16);
-  background: linear-gradient(
-    146deg,
-    rgba(217, 51, 16, 1) 0%,
-    rgba(147, 74, 57, 1) 100%
-  );
-}
-
-#close-beta-warning {
-	font-size: 90%;
-	border: 1px solid white;
-	border-radius: 4px;
-	padding: 2px 3px;
-	cursor: pointer;
-}
+@import '../static/assets/ol.css';
+@import '../static/assets/homepage-map.css';
 </style>
 
 <script>
@@ -646,6 +626,18 @@ import home_data from "~/data/home_data.json";
 import api_keys from "~/data/api_keys.json";
 import Drawer from "~/components/drawer.vue";
 import StoriesSwiper from '~/components/storiesSwiper.vue';
+// import * as ol from 'ol';
+// import Extent from 'ol/interaction/Extent.js';
+// import Point from 'ol/geom/Point.js';
+// import Polygon from 'ol/geom/Polygon.js';
+// import Circle from 'ol/geom/Circle.js';
+// import Interaction from 'ol/interaction/Interaction.js';
+// import TileLayer from 'ol/layer/Tile.js';
+// import VectorLayer from 'ol/layer/Vector.js';
+// import * as olProj from 'ol/proj';
+// import * as olStyle from 'ol/style';
+// import VectorSource from 'ol/source/Vector.js';
+// import TileJSON from 'ol/source/TileJSON.js';
 
 export default {
   name: "IndexPage",
@@ -653,6 +645,15 @@ export default {
     Drawer,
     StoriesSwiper,
   },
+	head() {
+		return {
+			title: "Collection Record",
+			script: [
+				{ type: 'text/javascript', src: '/assets/swiper-bundle.min.js', body: true },
+			],
+		}
+	},
+
   asyncData({ route }) {
     return {
       tag_groups: home_data.tag_groups,
@@ -666,7 +667,6 @@ export default {
   },
   data() {
     return {
-	  betaWarningVisibility: true,
       ready: false,
       is_mobile: false,
       // facets & eras

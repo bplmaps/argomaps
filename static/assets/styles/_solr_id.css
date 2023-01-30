@@ -71,7 +71,7 @@
 	top: 7px;
 	content: ' ';
 	position: absolute;
-	background-color: red;
+	background-color: #DA5E00;
 	width: 10px;
 	height: 10px;
 	border-radius: 8px;
@@ -247,6 +247,12 @@
 	border-radius: 15px;
 	margin-right: 8px;
 	margin-bottom: 10px;
+}
+.map-result .meta-info ul.tagged-with li a {
+	text-decoration: none;
+}
+.map-result .meta-info ul.tagged-with li a:hover {
+	text-decoration: underline;
 }
 
 .map-result .meta-information {

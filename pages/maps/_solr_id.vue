@@ -33,12 +33,12 @@
 
 					<h2 class="">Tags</h2>
 					<ul class="tagged-with">
-						<li v-for="tag, tag_key in this_map.map_tags" :key="tag_key">{{tag}}</li>
+						<li v-for="tag, tag_key in this_map.map_tags" :key="tag_key"><a :href="'/explore/'+tag.order+tag.category+'-'+tag.group_order">{{tag.name}}</a></li>
 					</ul>
 
-					<h2 class="">Downloads</h2>
-					<a :href="'https://iiif.digitalcommonwealth.org/iiif/2/'+metadataAPIvariables.response.document.exemplary_image_ssi+'/full/full/0/default.jpg'" class="button-like" :download="this_map.exemplary_image_ssi+'_thumbnail_300.jpg'" target="_blank">Large Image</a>
-					<a :href="'https://bpldcassets.blob.core.windows.net/derivatives/images/'+metadataAPIvariables.response.document.exemplary_image_ssi+'/image_thumbnail_300.jpg'" class="button-like" :download="this_map.exemplary_image_ssi+'_thumbnail_300.jpg'" target="_blank">Small Image</a>
+					<h2 v-if="metadataAPIvariables.response.document.exemplary_image_ssi" class="">Downloads</h2>
+					<a v-if="metadataAPIvariables.response.document.exemplary_image_ssi" :href="'https://iiif.digitalcommonwealth.org/iiif/2/'+metadataAPIvariables.response.document.exemplary_image_ssi+'/full/full/0/default.jpg'" class="button-like" :download="this_map.exemplary_image_ssi+'_thumbnail_300.jpg'" target="_blank">Large Image</a>
+					<a v-if="metadataAPIvariables.response.document.exemplary_image_ssi" :href="'https://bpldcassets.blob.core.windows.net/derivatives/images/'+metadataAPIvariables.response.document.exemplary_image_ssi+'/image_thumbnail_300.jpg'" class="button-like" :download="this_map.exemplary_image_ssi+'_thumbnail_300.jpg'" target="_blank">Small Image</a>
 
 					<h2 class=""> Digital Library</h2>
 					<div>
@@ -69,7 +69,7 @@
 </style>
 
 <script>
-import home_data from '~/data/maps_extended.json'
+import home_data from '~/data/home_data.json'
 import MetadataBlock from '~/components/MetadataBlock.vue';
 
 export default {
@@ -109,8 +109,8 @@ export default {
 	// fetchOnServer: function() { return this.$nuxt.context.app.head.title === 'ARGO - STAGING' ? false : true },
 
 	mounted() {
-		console.log (this.this_map);
-		console.log (this.metadataAPIvariables);
+		// console.log (this.this_map);
+		// console.log (this.metadataAPIvariables);
 		new Tify({
 			container: '#tify',
 			manifestUrl: 'https://collections.leventhalmap.org/search/' + this.$nuxt.context.params.solr_id + '/manifest.json',

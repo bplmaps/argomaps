@@ -597,6 +597,9 @@
           </div>
         </div>
       </div>
+
+      <!-- <FrontpageMap title="Explore by Map" /> -->
+
       <!-- {{drawer_results_visible}} -->
       <Drawer :drawer_results_visible="drawer_results_visible" :maps="maps" />
       <!-- <details open v-if="ready" id="results-bar" :class="['show',(results_visible.length) ? 'results-visible' : '']">

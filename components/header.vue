@@ -1,6 +1,7 @@
 <template>
 
 	<header>
+	    <div id="beta-warning" v-if="betaWarningVisibility">👋 ARGO is in public beta. Please feel free to explore, though we're currently developing the site. &nbsp; <span id="close-beta-warning" @click="betaWarningVisibility=false"><em class="fa fa-times"></em> &nbsp;Close</span></div>
 		<div :class="['header-wrapper ',{'open-menu': open_mobile_nav}]">
 			<div class="site-logo">
 				<a href="/" class="placeholder-logo"></a>
@@ -71,7 +72,7 @@
 						</li>
 
 						<li class="nav-item ">
-							<a @click.prevent="open_mobile_nav=!open_mobile_nav">About</a>
+							<a @click.prevent="open_mobile_nav=!open_mobile_nav">About ARGO</a>
 							<ul class="dropdown-content">
 								<li class="nav-dropdown">
 									<a href="/about/">
@@ -116,14 +117,17 @@ export default {
 			open_mobile_nav: false,
 			open_mobile_sub_current: null,
 			search_from_header: '',
+			betaWarningVisibility: false,
 		}
+	},
+	beforeMount() {
+		if (window.location.pathname == '/') this.betaWarningVisibility = true;
 	},
 	methods: {
 		searchSubmitFromHeader: function(event) {
 			console.log('> searchSubmitFromHeader', this.search_from_header);
 			document.location.href='/search/?q='+this.search_from_header;
 		},
-
-	}
+	},
 }
 </script>

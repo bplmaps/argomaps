@@ -28,7 +28,7 @@
 					</div>
 				</li>
 				<li class="nav-item" data-id="7">
-					<p class="link-like">About</p>
+					<p class="link-like">About ARGO</p>
 					<div class="nav-dropdown">
 						<ul class='dropdown-content'>
 							<li class="item-dropdown "><a href="/about/">About ARGO</a></li>
@@ -55,8 +55,9 @@
 			</div>
 		</nav>
 		<div class="footer-logos">
-			<div class="logo"></div>
-			<div class="logo"></div>
+			<div class="logo"><img src="/images/NBLMEC_logo.png" /></div>
+			<div class="logo"><img src="/images/GWMV_logo.png" /></div>
+			<div class="logo"><img src="/images/nhprc-logo-l.jpg" /></div>
 		</div>
 		<div class="footer-credits" data-embed="Footer: above credits">
 			<div class="credit" data-embed="Footer: credits left area"><p>

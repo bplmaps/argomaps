@@ -31,7 +31,7 @@
 						</div>
 						<div class="text">
 							<p>{{person.short_description}}</p>
-							<a href="#" @click="drawer.showMaps(people_arr['solr_ids'])" class="button-like dark">See {{person.count}} map{{(person.count==1) ? '' : 's'}}</a>
+							<a @click="drawer_results_visible = person.solr_ids.split(',')" class="button-like dark">See {{person.count}} map{{(person.count==1) ? '' : 's'}}</a>
 							<a :href="'/people/'+person.slug" class="button-like light">Learn more</a>
 						</div>
 					</li>
@@ -85,15 +85,21 @@
 				</template>
 			</div>
 		</div>
+		<Drawer :drawer_results_visible="drawer_results_visible" :maps="maps" />
 	</div>
 
 </template>
 
 <script>
 import people from '~/data/people.json'
+import Drawer from "~/components/drawer.vue";
+import home_data from "~/data/home_data.json";
 
 export default {
-	name: 'AirportDetailPage',
+	name: 'People',
+	components: {
+		Drawer,
+	},
 	head () {
 		return {
 		title: (this.person) ? this.person.name + ' Information' : 'People',
@@ -127,6 +133,7 @@ export default {
 			current_slug,
 			people_tags,
 			people: people.people,
+			maps: home_data.maps,
 		}
 
 	},
@@ -134,7 +141,7 @@ export default {
 		return {
 			people_filter_by: 1,
 			people_filter_view: 'gallery',
-			// current_slug: null,
+			drawer_results_visible: [],
 		}
 	},
 	beforeMount() {

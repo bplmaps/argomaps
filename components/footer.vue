@@ -56,7 +56,7 @@
 		</nav>
 		<div class="footer-logos">
 			<div class="logo"><img src="/images/NBLMEC_logo.png" /></div>
-			<div class="logo"><img src="/images/GWMV_logo.png" /></div>
+			<div class="logo"><img src="/images/gwpl_logo.png" /></div>
 			<div class="logo"><img src="/images/nhprc-logo-l.jpg" /></div>
 		</div>
 		<div class="footer-credits" data-embed="Footer: above credits">

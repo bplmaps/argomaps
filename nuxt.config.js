@@ -28,12 +28,10 @@ export default {
 			{ rel: 'stylesheet', href: 'https://use.typekit.net/rok7eea.css' },
 			{ rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' },
 			{ rel: 'stylesheet', href: '/assets/swiper-bundle.min.css' },
-			{ rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@main/dist/en/v7.0.0/legacy/ol.css' },
 			{ rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity: 'sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin: 'anonymous' },
 		],
 		script: [
 			{ type: 'text/javascript', src: '/assets/swiper-bundle.min.js', body: true },
-			{ type: 'text/javascript', src: 'https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@main/dist/en/v7.0.0/legacy/ol.js', body: true },
 		]
 	},
 
@@ -51,6 +49,7 @@ export default {
 		// { src: '~/plugins/swiper-bundle.min.js', mode: 'client' }
 		'@/plugins/ga',
 		{ src: "~/plugins/tify", mode: "client" }, // create plugin.js in plugins dir
+		{ src: '~plugins/ol', ssr: false },
 	],
 
 	// Auto import components: https://go.nuxtjs.dev/config-components

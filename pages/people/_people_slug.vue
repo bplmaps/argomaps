@@ -31,7 +31,7 @@
 						</div>
 						<div class="text">
 							<p>{{person.short_description}}</p>
-							<a @click="drawer_results_visible = person.solr_ids.split(',')" class="button-like dark">See {{person.count}} map{{(person.count==1) ? '' : 's'}}</a>
+							<a @click="openDrawer(person.solr_ids.split(','))" class="button-like dark">See {{person.count}} map{{(person.count==1) ? '' : 's'}}</a>
 							<a :href="'/people/'+person.slug" class="button-like light">Learn more</a>
 						</div>
 					</li>
@@ -85,7 +85,6 @@
 				</template>
 			</div>
 		</div>
-		<Drawer :drawer_results_visible="drawer_results_visible" :maps="maps" />
 	</div>
 
 </template>
@@ -160,6 +159,10 @@ export default {
 		this.paintMapsSlider();
 	},
 	methods: {
+		openDrawer(which_maps) {
+			// emit open_drawer in footer
+			this.$root.$emit('open_drawer', this.maps, which_maps) //like this
+		},
 		paintMapsSlider: function() {
 			// console.log('> paintMapsSlider');
 			var maps_swiper = new Swiper(".related-maps-swiper", {

@@ -190,7 +190,7 @@ button.styleless{
     transform:translate(-50%,-100%);
     padding:5px 10px;
     color:#ffffff;
-    background-color:#333;
+    background-color:#4e798c;
     font-weight:normal;
     font-size:12px;
     border-radius:4px;
@@ -219,7 +219,7 @@ button.styleless{
     height:15px;
     left:50%;
     transform:translate(-50%,-50%) rotate(45deg);
-    background-color:#333;
+    background-color:#4e798c;
     box-shadow:0 1px 8px rgba(0,0,0,0.5);
 }
 .tooltip em {
@@ -433,7 +433,7 @@ footer .search {
 }
 header .header-search button,
 .campaign div button,
-footer .header-search .search button {
+footer .header-search .search input {
 	position: absolute;
 	transform: translateY(-50%);
 	top: 50%;
@@ -456,7 +456,7 @@ header .header-wrapper .header-search a {
 	margin-top: -80px;
 	padding-top: 100px;
 	height: 785px;
-	background-image: url('/images/campaign-bg.png'); 
+	background-image: url('/images/campaign-bg.jpg'); 
 	background-size: cover;
 	background-position: center;
 }
@@ -465,7 +465,7 @@ header .header-wrapper .header-search a {
 	height: 430px;
 	margin: auto;
 	padding-top: 100px;
-	background-image: url(/images/cartouch-bg.png);
+	background-image: url(/images/cartouch-bg.webp);
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -598,132 +598,7 @@ header .header-wrapper .header-search a {
 .explore-by.explore-by-facets div:last-of-type {
 	margin-top: 5px;
 }
-.explore-by .map-container .explore-by-checkboxes {
-	font-size: 12px;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	/* width: 100%; */
-	overflow-x: scroll;
-	scrollbar-width: none;
-	gap: 10px;
-}
-.explore-by .explore-by-checkboxes::-webkit-scrollbar {
-	display: none;
-}
-.explore-by .explore-by-checkboxes * {
-	min-width: max-content;
-	/* margin-right: 10px; */
-}
-.explore-by .explore-by-checkboxes label {
-	position: relative;
-	/* padding: 5px 30px 5px 27px; */
-	cursor: pointer;
-	font-size: 14px;
-	font-weight: 300;
-	display: flex;
-	align-items: center;
-	padding: 5px 10px;
-	gap: 5px;
-}
-.explore-by .explore-by-checkboxes label::after {
-	content: none;
-	/* content: ''; */
-	position: absolute;
-	height: 14px;
-	width: 14px;
-	top: 2px;
-	right: 5px;
-	/* background-color: #A9CBEE; */
-	border: 3px solid #000;
-	border-radius: 50%;
-}
-/* TODO: consider having the scales all tied to a single place via vars? */
-.explore-by .explore-by-checkboxes label svg{
-	fill: #A9CBEE;
-	min-width: unset;
-}
-.explore-by .explore-by-checkboxes label.xl-map::after,
-.explore-by .explore-by-checkboxes label.l-map::after,
-.explore-by .explore-by-checkboxes label.m-map::after,
-.explore-by .explore-by-checkboxes label.s-map::after,
-.explore-by .explore-by-checkboxes label.xl-map svg,
-.explore-by .explore-by-checkboxes label.l-map svg,
-.explore-by .explore-by-checkboxes label.m-map svg,
-.explore-by .explore-by-checkboxes label.s-map svg
- {
-	/* background-color: #A9CC01; */
-	fill: #A9CC01;
-	min-width: unset;
-}
-.explore-by .explore-by-checkboxes label.l-map::after,
-.explore-by .explore-by-checkboxes label.l-map svg {
-	transform: scale(.85);
-	/* height: 12px; */
-	/* width: 12px; */
-	/* top: 4px; */
-	/* right: 6px; */
-	/* border: 2px solid #000; */
-}
-.explore-by .explore-by-checkboxes label.m-map::after,
-.explore-by .explore-by-checkboxes label.m-map svg {
-	transform: scale(.7);
-	/* height: 10px; */
-	/* width: 10px; */
-	/* top: 5px; */
-	/* right: 7px; */
-	/* border: 2px solid #000; */
-}
-.explore-by .explore-by-checkboxes label.s-map::after,
-.explore-by .explore-by-checkboxes label.s-map svg {
-	transform: scale(.5);
-	/* height: 8px; */
-	/* width: 8px; */
-	/* top: 6px; */
-	/* right: 8px; */
-	/* border: 2px solid #000; */
-}
-.explore-by .explore-by-checkboxes input {
-	vertical-align: text-top;
-	position: absolute;
-	opacity: 0;
-	cursor: pointer;
-	height: 0;
-	width: 0;
-}
-.explore-by .explore-by-checkboxes .checkmark {
-	/* position: absolute;
-	top: 4px;
-	left: 5px; */
-	height: 16px;
-	width: 16px;
-	background-color: #FFFFFF;
-	border: 0.5px solid #606060;
-	border-radius: 2px;
-	position: relative;
-	
-}
-.explore-by .explore-by-checkboxes .checkmark::after {
-	content: '';
-	position: absolute;
-	background-color: #606060;
-	height: 20px;
-	width: 20px;
-	top: -2px;
-	left: -2px;
-	clip-path: polygon(10% 40%, 35% 65%, 90% 10%, 100% 20%, 35% 85%, 0% 50%);
-	display: none;
-}
-.explore-by .explore-by-checkboxes label.label-checked {
-	background-color: #DDD;
-	border-radius: 8px;
-}
-.explore-by .explore-by-checkboxes label input:checked ~ .checkmark {
-	background-color: #F2F2F2;
-}
-.explore-by .explore-by-checkboxes label input:checked ~ .checkmark::after {
-	display: block;
-}
+
 .explore-by.curated-stories-slider a,
 .explore-by.curated-themes-slider a, 
 .explore-by.explore-by-second a,
@@ -830,65 +705,6 @@ header .header-wrapper .header-search a {
 .explore-by .explore-by-second {
 	height: 200px;
 }
-.explore-by.explore-by-institution {
-	background-image: url(/images/header_background-FPO.jpg);
-	/* width: 100vw; */
-	width: 100%;
-	margin: 50px 0;
-	padding: 30px 20px 77px 20px;
-}
-.explore-by.explore-by-institution::before,
-.explore-by.explore-by-institution::after {
-	display: none;
-}
-.explore-by.explore-by-institution .swiper-button-next,
-.explore-by.explore-by-institution .swiper-rtl .swiper-button-prev,
-.explore-by.explore-by-institution .swiper-button-prev,
-.explore-by.explore-by-institution .swiper-rtl .swiper-button-next {
-	bottom: 30px;
-}
-.explore-by.explore-by-institution h2 {
-	color: #FFFFFF;
-	padding: 0;
-	border: unset;
-}
-.explore-by.explore-by-institution h2::before,
-.explore-by.explore-by-institution h2::after {
-	display: none;
-}
-.explore-by.explore-by-institution .align-bottom {
-	align-items: stretch;
-	margin-bottom: 0;
-}
-.explore-by.explore-by-institution .explore-slide {
-	/* min-width: calc((100% - 100px) / 5); */
-	flex: none;
-	height: auto;
-	border-radius: 15px;
-	padding: 25px 15px;
-	background-color: #FFFFFF;
-	color: #000;
-	font-size: 16px;
-	font-weight: 600px;
-	text-align: left;
-	line-height: 1.2;
-}
-.explore-by.explore-by-institution .explore-slide img {
-	max-height: 50px;
-	max-width: 130px;
-	/* width: 100%; */
-	margin-bottom: 10px;
-}
-.explore-by.explore-by-institution .explore-slide > div {
-	display: inline-block;
-	margin-top: 5px;
-	border: 0.5px solid #979797;
-	background-color: #F2F2F2;
-	padding: 8px 15px;
-    font-size: 12px;
-    font-weight: 200;
-}
-
 
 /* start filter page */
 .filter {
@@ -2412,7 +2228,7 @@ header {
 #results-bar {
 	width: 100%;
 	position: fixed;
-	background-color: black;
+	background-color: #4e798c;
 	color: white;
 	z-index: 100;
 	font-size: 21px;
@@ -2422,10 +2238,11 @@ header {
 }
 #results-bar.results-visible {
 	bottom: 0;
+	left: 0;
 }
 
 #results-bar summary {
-	padding: 11px 21px;
+	padding: 8px 15px;
 }
 #results-bar summary span {
 	display:inline-block;
@@ -2433,7 +2250,7 @@ header {
 	height: 34px;
 	border-radius: 20px;
 	background-color: #6B9AB1;
-	padding: 3px;
+	padding: 3px 0;
 	text-align: center;
 }
 #results-bar summary:after {
@@ -3061,7 +2878,7 @@ footer .social-icons a:last-of-type .icon {
 		/* padding: 0 35px; */
 		height: 85vw;
 		padding: 0;
-		background-image: url('/images/argo-cartouch-bg-mobile.png');
+		background-image: url('/images/argo-cartouch-bg-mobile.webp');
 		/* background-size: cover; */
 		display: flex;
 		flex-direction: column;

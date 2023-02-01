@@ -67,7 +67,40 @@
 			</p></div>
 			<div class="credit" data-embed="Footer: credits right area"><p>Exhibition Site by <a href="/">Byte</a></p></div>
 		</div>
-		
+
+    	<Drawer :drawer_results_visible="drawer_results_visible" :maps="maps" />
+
 	</footer>
 
 </template>
+
+<script>
+import Drawer from "~/components/drawer.vue";
+
+export default {
+	components: {
+		Drawer,
+	},
+	data () {
+		return {
+			maps: [],
+			drawer_results_visible: [],
+		}
+	},
+	beforeMount() {
+	},
+    mounted() {
+		// callable from anywhere via emit
+		this.$root.$on('open_drawer', (maps, which_maps) => {
+			this.openDrawer(maps, which_maps);
+		})
+	},
+	methods: {
+		openDrawer: function(maps, which_maps) {
+			// console.log('> footer openDrawer', which_maps);
+			this.maps = maps;
+			this.drawer_results_visible = which_maps;
+		},
+	},
+}
+</script>

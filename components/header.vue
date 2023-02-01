@@ -1,7 +1,7 @@
 <template>
 
 	<header>
-	    <div id="beta-warning" v-if="betaWarningVisibility">👋 ARGO is in public beta. Please feel free to explore, though we're currently developing the site. &nbsp; <span id="close-beta-warning" @click="betaWarningVisibility=false"><em class="fa fa-times"></em> &nbsp;Close</span></div>
+		<div id="beta-warning"><div v-if="betaWarningVisibility">👋 ARGO is in public beta. Please feel free to explore, though we're currently developing the site. &nbsp; <span id="close-beta-warning" @click="betaWarningVisibility=false"><em class="fa fa-times"></em> &nbsp;Close</span></div></div>
 		<div :class="['header-wrapper ',{'open-menu': open_mobile_nav}]">
 			<div class="site-logo">
 				<a href="/" class="placeholder-logo"></a>
@@ -96,7 +96,7 @@
 					<form class="header-search" @submit.prevent="searchSubmitFromHeader">
 						<div>
 							<label for="header-search" class="sr-only">Search</label>
-							<input placeholder="Search" v-model="search_from_header" id="header-search" type="text"><button><em class="fa fa-search"></em></button>
+							<input placeholder="Search" v-model="search_from_header" id="header-search" type="text"><button type="submit" class="button-like primary"><em class="fa fa-search"></em></button>
 						</div>
 						<!-- <a href="/search/">Advanced Search</a> -->
 					</form>
@@ -121,7 +121,9 @@ export default {
 		}
 	},
 	beforeMount() {
-		if (window.location.pathname == '/') this.betaWarningVisibility = true;
+		this.$nextTick(() => {
+			if (window.location.pathname == '/') this.betaWarningVisibility = true;
+		});
 	},
 	methods: {
 		searchSubmitFromHeader: function(event) {

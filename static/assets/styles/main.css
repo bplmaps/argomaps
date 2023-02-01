@@ -113,8 +113,15 @@
 /* top message */
 #beta-warning {
 	width: 100%;
-	text-align: center;
-	padding: 6px 0;
+	position: absolute;
+	display: flex;
+    top: 49px;
+}
+#beta-warning > div {
+	margin: 0 auto;
+	border-radius: 7px;
+	border: 1px solid #c3d0d8;
+	padding: 1px 8px 5px 3px;
 	color: #4E798D;
 	font-size: 15px;
 	background-color: #DDE8EE;
@@ -128,6 +135,17 @@
 }
 #close-beta-warning em {
 	opacity: .7;
+}
+@media only screen and (max-width: 605px) {
+	#beta-warning {
+		top: 53px;
+	}
+	#beta-warning > div {
+		margin: 0 10px;
+		text-align: center;
+		padding: 1px 8px 5px 3px;
+		font-size: 14px;
+	}	
 }
 
 
@@ -504,7 +522,7 @@ header .header-wrapper .header-search a {
 	margin-top: 20px;
 }
 .other-logos div {
-	background-image: url(/images/GWMV_logo.png);
+	background-image: url(/images/gwpl_logo.png);
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -2878,7 +2896,7 @@ footer .social-icons a:last-of-type .icon {
 		/* padding: 0 35px; */
 		height: 85vw;
 		padding: 0;
-		background-image: url('/images/argo-cartouch-bg-mobile.webp');
+		background-image: url('/images/argo-cartouch-bg-mobile.png');
 		/* background-size: cover; */
 		display: flex;
 		flex-direction: column;

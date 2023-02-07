@@ -2,7 +2,7 @@
 
 	<footer data-embed="Footer:Footer">
 		<div class="site-logo">
-			<a href="/" class="placeholder-logo"></a>
+			<a href="/" class="placeholder-logo" alt="ARGO Home"></a>
 		</div>
 		<nav id="site_map" class="site-map" data-embed="Footer: sitemap nav">
 			<ul>

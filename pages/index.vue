@@ -18,8 +18,8 @@
 				</p>
 				<div>
 				<form action="/search/" @submit.prevent="searchSubmitFromHomepage">
-					<label for="header-search" class="sr-only">Enter search terms</label>
-					<input placeholder="Search" v-model="search_on_homepage" id="header-search" type="text" />
+					<label for="main-search" class="sr-only">Enter search terms</label>
+					<input placeholder="Search" v-model="search_on_homepage" id="main-search" type="text" />
 					<button aria-label="Go"><em class="fa fa-search"></em></button>
 				</form>
 				</div>
@@ -461,27 +461,27 @@ export default {
 			if (this.show_facet != which) {
 				this.show_facet = which;
 				this.$nextTick(() => {
-				var facets_swiper = new Swiper(
-					".facets-" + which.split("_").join("-") + "-swiper",
-					{
-					slidesPerView: 1,
-					breakpoints: {
-						500: { slidesPerView: 2 },
-						768: { slidesPerView: 3 },
-						900: { slidesPerView: 4 },
-					},
-					spaceBetween: 25,
-					// pagination: {
-					// 	el: ".facets-swiper-pagination",
-					// 	clickable: true,
-					// },
-					navigation: {
-						nextEl: ".facets-swiper-button-next",
-						prevEl: ".facets-swiper-button-prev",
-					},
-					}
-				);
-				console.log(":::", facets_swiper);
+					var facets_swiper = new Swiper(
+						".facets-" + which.split("_").join("-") + "-swiper",
+						{
+						slidesPerView: 1,
+						breakpoints: {
+							500: { slidesPerView: 2 },
+							768: { slidesPerView: 3 },
+							900: { slidesPerView: 4 },
+						},
+						spaceBetween: 25,
+						// pagination: {
+						// 	el: ".facets-swiper-pagination",
+						// 	clickable: true,
+						// },
+						navigation: {
+							nextEl: ".facets-swiper-button-next",
+							prevEl: ".facets-swiper-button-prev",
+						},
+						}
+					);
+					// console.log(":::", facets_swiper);
 				});
 			} else {
 				this.show_facet = null;

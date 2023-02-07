@@ -6,6 +6,7 @@
 				<h1>Explore maps by people</h1>
 				<ul>
 					<li v-for="people_tag, people_tag_index in people_tags" :key="people_tag_index" @click="showByFilter(people_tag_index)" :class="(people_tag_index==people_filter_by) ? 'active' : ''">{{people_tag.name}}</li>
+					<li @click="showByFilter('')" :class="(people_filter_by=='') ? 'active' : ''">Other Mapmakers</li>
 				</ul>
 				<div class="filter-view-switch">
 					<label for="filter_view_switch">View: </label>
@@ -15,10 +16,32 @@
 					</select>
 				</div>
 			</div>
-			<h2>Mapmakers</h2>
-			<ul :class="'filter-list '+people_filter_view+'-view'">
+			<h2 v-if="people_filter_by">{{people_tags[people_filter_by].name}}</h2>
+			<ul v-if="people_filter_by" :class="'filter-list '+people_filter_view+'-view'">
 				<template v-for="person, person_index in people">
 					<li v-if="person.people_tag_ids && person.people_tag_ids.includes(parseInt(people_filter_by))" :key="person_index" class="filter-result" data-id="person.people_tags.hasOwnProperty(1)">
+						<div class="result-image" :style="(person.image) ? 'background-image: url(\''+person.image+'\');' : ''">
+							<ul class="result-tags">
+								<template v-for="people_tag_id, people_tag_index in person.people_tag_ids">
+								<li v-if="people_tags[people_tag_id]" :key="people_tag_index">{{people_tags[people_tag_id].name}}</li>
+								</template>
+							</ul>
+						</div>
+						<div class="title-tags">
+							<h3>{{person.name}}</h3>
+						</div>
+						<div class="text">
+							<p>{{person.short_description}}</p>
+							<a @click="openDrawer(person.solr_ids.split(','))" class="button-like dark">See {{person.count}} map{{(person.count==1) ? '' : 's'}}</a>
+							<a :href="'/people/'+person.slug" class="button-like light">Learn more</a>
+						</div>
+					</li>
+				</template>
+			</ul>
+			<!-- show all other untagged people -->
+			<ul v-else :class="'filter-list '+people_filter_view+'-view'">
+				<template v-for="person, person_index in people">
+					<li v-if="!person.people_tag_ids" :key="person_index" class="filter-result" data-id="person.people_tags.hasOwnProperty(1)">
 						<div class="result-image" :style="(person.image) ? 'background-image: url(\''+person.image+'\');' : ''">
 							<ul class="result-tags">
 								<template v-for="people_tag_id, people_tag_index in person.people_tag_ids">
@@ -65,9 +88,9 @@
 					<h2>Related maps</h2>
 					<div class="swiper related-maps-swiper">
 						<div class="swiper-wrapper align-bottom" style="max-width: 100px;">
-							<div class="swiper-slide" v-for="map, map_key in person.maps" :key="map_key">
+							<div class="swiper-slide" v-for="map, map_key in person.maps" :key="map_key" @click="openLink('/maps/'+map.solr_id)" >
 								<div class="related-map" :style="'background-image: url(\'https://bpldcassets.blob.core.windows.net/derivatives/images/'+map.exemplary_image_ssi+'/image_thumbnail_300.jpg\');'"></div>
-								<p>{{map.title_info_primary_tsi}}</p>
+								<p class="related-map-description">{{map.title_info_primary_tsi}}</p>
 							</div>
 						</div>
 						<div class="maps-swiper-button-next swiper-button-next"></div>
@@ -162,6 +185,9 @@ export default {
 		openDrawer(which_maps) {
 			// emit open_drawer in footer
 			this.$root.$emit('open_drawer', this.maps, which_maps) //like this
+		},
+		openLink(which_href) {
+			window.location.href = which_href;
 		},
 		paintMapsSlider: function() {
 			// console.log('> paintMapsSlider');

@@ -226,7 +226,7 @@
 			<div class="swiper institutions-swiper">
 				<div class="swiper-wrapper align-bottom">
 					<a @click="openDrawer(tag.solr_ids_array)" v-for="(tag, tag_index) in tag_groups.institution_name_ssi.data" :key="tag_index" class="swiper-slide explore-slide">
-					<img :src="tag.image" loading="lazy" /><br />
+					<img :src="tag.image" :alt="tag.name+' logo'" loading="lazy" /><br />
 					{{ tag.name }}<br />
 					<a class="button-like primary">See {{ tag.count }} maps</a>
 					</a>

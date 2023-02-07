@@ -270,7 +270,10 @@ export default {
 	},
 	head() {
 		return {
-			title: "Collection Record",
+			title: "ARGO",
+			meta: [
+				{ description: "Discover the historical geography of the American Revolutionary War era through maps, rich interpretive essays, and interactives" },
+			],
 			script: [
 				{ type: 'text/javascript', src: '/assets/swiper-bundle.min.js', body: true },
 			],

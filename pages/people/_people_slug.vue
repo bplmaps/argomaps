@@ -32,7 +32,7 @@
 						</div>
 						<div class="text">
 							<p>{{person.short_description}}</p>
-							<a @click="openDrawer(person.solr_ids.split(','))" class="button-like dark">See {{person.count}} map{{(person.count==1) ? '' : 's'}}</a>
+							<a v-if="person.solr_ids" @click="openDrawer(person.solr_ids.split(','))" class="button-like dark">See {{person.count}} map{{(person.count==1) ? '' : 's'}}</a>
 							<a :href="'/people/'+person.slug" class="button-like light">Learn more</a>
 						</div>
 					</li>
@@ -183,6 +183,7 @@ export default {
 	},
 	methods: {
 		openDrawer(which_maps) {
+			console.log('??', which_maps);
 			// emit open_drawer in footer
 			this.$root.$emit('open_drawer', this.maps, which_maps) //like this
 		},

@@ -128,7 +128,8 @@
 }
 #close-beta-warning {
 	font-size: 90%;
-	border: 1px solid #3b5c68;
+	border: 1px solid #4E798D;
+	color: #3B5C68;
 	border-radius: 5px;
 	padding: 2px 10px;
 	cursor: pointer;
@@ -1851,7 +1852,7 @@ input::-webkit-inner-spin-button {
 .timeline-years .years .year .year-text {
 	min-width: 35px;
 	font-size: 13px;
-	color: #00000088;
+	color: #00000099;
 }
 .timeline-years .years .year .year-orient {
 	position: absolute;

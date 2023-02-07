@@ -99,7 +99,7 @@
 									{{ timeline_eras[year].era }} &nbsp;
 									<span class="era-years">{{ timeline_eras[year].era_start_year }} - {{ timeline_eras[year].era_end_year }}</span>
 								</div>
-								<img class="era-image" :src="timeline_eras[year].background_image" loading="lazy" />
+								<img class="era-image" :src="timeline_eras[year].background_image" :alt="timeline_eras[year].background_image_alt_tag" loading="lazy" />
 								<div class="era-text" v-html="timeline_eras[year].era_description"></div>
 							</div>
 						</div>

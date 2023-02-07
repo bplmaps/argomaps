@@ -106,7 +106,7 @@
 	position: relative;
 }
 
-.map-result .meta-info .button-like::after {
+.map-result .meta-info .button-like:not(.no-arrow)::after {
 	content: '';
 	position: absolute;
 	top: 10px;

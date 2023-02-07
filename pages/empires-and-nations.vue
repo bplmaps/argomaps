@@ -17,8 +17,8 @@
 			</div>
 			<h2>{{this.tags[this.filter_by].name}}</h2>
 			<ul :class="'filter-list '+filter_view+'-view'">
-				<template v-for="person, person_index in this.tags[this.filter_by].solr_ids_array">
-					<li :key="person_index" class="filter-result">
+				<template v-for="person, person_index in tags[filter_by].solr_ids_array">
+					<li :key="person_index" class="filter-result" v-if="maps[person]">
 						<div class="result-image" :style="'background-image: url(\'https://bpldcassets.blob.core.windows.net/derivatives/images/'+maps[person].exemplary_image_ssi+'/image_thumbnail_300.jpg\');'">
 							<ul class="result-tags">
 								<template v-for="people_tag_id, people_tag_index in person.people_tag_ids">
@@ -34,6 +34,10 @@
 							<a :href="'/maps/'+maps[person].solr_id" class="button-like dark">See map</a>
 						</div>
 					</li>
+					<!-- <li :key="person_index" v-else>
+						MISSING {{person_index}}<br />
+						{{tags[filter_by].solr_ids_array}}
+					</li> -->
 				</template>
 			</ul>
 		</div>

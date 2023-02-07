@@ -215,8 +215,8 @@
     position: relative;
 }
 .ol-zoom {
-	top: 18px;
-	left: auto;
+	top: 18px !important;
+	left: auto !important;
 	right: .5em;
 }
 .map {

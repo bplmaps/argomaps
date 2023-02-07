@@ -20,7 +20,7 @@
 				<form action="/search/" @submit.prevent="searchSubmitFromHomepage">
 					<label for="header-search" class="sr-only">Search</label>
 					<input placeholder="Search" v-model="search_on_homepage" id="header-search" type="text" />
-					<button><em class="fa fa-search"></em></button>
+					<button aria-label="Search Now"><em class="fa fa-search"></em></button>
 				</form>
 				</div>
 			</div>

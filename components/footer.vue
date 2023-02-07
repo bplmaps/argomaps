@@ -55,9 +55,9 @@
 			</div>
 		</nav>
 		<div class="footer-logos">
-			<div class="logo"><img src="/images/NBLMEC_logo.png" /></div>
-			<div class="logo"><img src="/images/gwpl_logo.png" /></div>
-			<div class="logo"><img src="/images/nhprc-logo-l.jpg" /></div>
+			<div class="logo"><img src="/images/NBLMEC_logo.png" alt="Levanthal Map Center Logo" /></div>
+			<div class="logo"><img src="/images/gwpl_logo.png" alt="George Washington Presidential Library Logo" /></div>
+			<div class="logo"><img src="/images/nhprc-logo-l.jpg" alt="National Archives Logo" /></div>
 		</div>
 		<div class="footer-credits" data-embed="Footer: above credits">
 			<div class="credit" data-embed="Footer: credits left area"><p>

@@ -106,7 +106,7 @@ export default {
 			.then(d => d.json());
 	},
 
-	// fetchOnServer: function() { return this.$nuxt.context.app.head.title === 'ARGO - STAGING' ? false : true },
+	fetchOnServer: function() { return this.$nuxt.context.app.head.title === 'ARGO - STAGING' ? false : true },
 
 	mounted() {
 		// console.log (this.this_map);

@@ -992,6 +992,20 @@ header .header-wrapper .header-search a {
 	line-clamp: 3;
 	-webkit-box-orient: vertical;
 }
+.filter .filter-list.gallery-view li .text > div {
+	display: flex;
+	align-items: center;
+}
+.filter .filter-list.gallery-view li .text > div > a {
+	white-space: nowrap;
+}
+.filter .filter-list.gallery-view li .text > div > div {
+	font-size: 14px;
+	font-weight: 200;
+	flex-grow: 1;
+	text-align: right;
+	font-style: italic;
+}
 /* end filter page */
 
 /* start filter-item page */
@@ -1158,8 +1172,13 @@ header .header-wrapper .header-search a {
 	box-shadow: 0 2px 4px rgba(152, 152, 152, .5);
 	background-size: cover; 
 	background-position: center; 
-	background-repeat: no-repeat; 
-} 
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+.filter-item .item-content .related-maps-swiper .related-map-description { 
+	cursor: pointer;
+}
+
 .filter-item .item-content aside .related-maps p { 
 	font-size: 15px; 
 	line-height: 19px; 
@@ -2267,7 +2286,8 @@ header {
 	width: 34px;
 	height: 34px;
 	border-radius: 20px;
-	background-color: #6B9AB1;
+	background-color: white;
+	color: #6B9AB1;
 	padding: 3px 0;
 	text-align: center;
 }

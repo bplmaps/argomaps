@@ -66,7 +66,6 @@ export default {
 	build: {
 		postcss: {
 			plugins: {
-			  tailwindcss: {},
 			  autoprefixer: {},
 			}
 		  }

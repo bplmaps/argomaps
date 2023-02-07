@@ -4,7 +4,7 @@
 		<div id="beta-warning"><div v-if="betaWarningVisibility">👋 ARGO is in public beta. Please feel free to explore, though we're currently developing the site. &nbsp; <a id="close-beta-warning" @click="betaWarningVisibility=false"><em class="fa fa-times"></em> &nbsp;Close</a></div></div>
 		<div :class="['header-wrapper ',{'open-menu': open_mobile_nav}]">
 			<div class="site-logo">
-				<a href="/" class="placeholder-logo"></a>
+				<a href="/" class="placeholder-logo" alt="ARGO Home"></a>
 			</div>
 			<a href="#" class="ham-menu" @click="open_mobile_nav = !open_mobile_nav">
 				<span class="line"></span><span class="line"></span><span class="line"></span>

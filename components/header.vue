@@ -7,6 +7,7 @@
 				<a href="/" class="placeholder-logo" alt="ARGO Home"></a>
 			</div>
 			<a href="#" class="ham-menu" @click="open_mobile_nav = !open_mobile_nav">
+				<span class="sr-only">Open menu</span>
 				<span class="line"></span><span class="line"></span><span class="line"></span>
 			</a>
 			<nav class="site-navigation" id="site_navigation">

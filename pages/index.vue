@@ -46,7 +46,7 @@
 							<div class="explore-image" style="background-image: url('/images/explore_by_people.jpg')"></div>
 							People
 							<br />
-							<span>{{ tag_groups["people"].data.length }} results</span>
+							<span v-if="tag_groups['people']">{{ tag_groups["people"].data.length }} results</span>
 						</a>
 					</div>
 					<div class="swiper-slide">
@@ -54,7 +54,7 @@
 							<div class="explore-image" style="background-image: url('/images/explore_by_empirenation.jpg');"></div>
 							Empires and Nations
 							<br />
-							<span>{{tag_groups["2empires_and_nations"].data.length}} results</span>
+							<span v-if="tag_groups['2empires_and_nations']">{{tag_groups["2empires_and_nations"].data.length}} results</span>
 						</a>
 					</div>
 					<div class="swiper-slide">
@@ -62,7 +62,7 @@
 							<div class="explore-image" style="background-image: url('/images/explore_by_cartouche.jpg');"></div>
 							Cartouches
 							<br />
-							<span>{{tag_groups["4features"].data[2].solr_ids_array.length}} results</span>
+							<span v-if="tag_groups['4features']">{{tag_groups["4features"].data[2].solr_ids_array.length}} results</span>
 						</a>
 					</div>
 					<div class="swiper-slide">
@@ -70,7 +70,7 @@
 							<div class="explore-image" style="background-image: url('/images/explore_by_animals.jpg');"></div>
 							Animals
 							<br />
-							<span>{{tag_groups["4features"].data[5].solr_ids_array.length}} results</span>
+							<span v-if="tag_groups['4features']">{{tag_groups["4features"].data[5].solr_ids_array.length}} results</span>
 						</a>
 					</div>
 					<div class="curated-themes-swiper-pagination"></div>
@@ -190,7 +190,7 @@
 			<h2>Explore by Facets</h2>
 			<ul class="explore-by-tags">
 				<template v-for="(tag_group, index) in tag_groups">
-					<li :key="index" v-if="index != 'institution_name_ssi' && index != 'years'">
+					<li :key="index" v-if="index != 'institution_name_ssi' && index != 'years' && index != 'exhibits' && index != 'people'">
 						<a @click="clickFacet(index)" :class="[{ active: show_facet == index }]" >{{ tag_group.show_name }}</a>
 					</li>
 				</template>

@@ -32,7 +32,10 @@
 						</div>
 						<div class="text">
 							<p>{{maps[person].title_info_primary_subtitle_tsi}}</p>
-							<a :href="'/maps/'+maps[person].solr_id" class="button-like dark">See map</a>
+							<div>
+								<a :href="'/maps/'+maps[person].solr_id" class="button-like dark">See map</a>
+								<div>{{maps[person].who}} <template v-if="maps[person].date_range">Year: {{maps[person].date_range}}</template></div>
+							</div>
 						</div>
 					</li>
 				</template>

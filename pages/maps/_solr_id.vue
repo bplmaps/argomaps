@@ -27,7 +27,7 @@
 					<div v-if="metadataAPIvariables.response.document.related_item_isreferencedby_ssm">
 						<a :href="JSON.parse(metadataAPIvariables.response.document.related_item_isreferencedby_ssm[0]).url"
 							target="_blank"
-							class="border border-blue-500 hover:bg-blue-50 px-2 py-1 rounded">See this object’s
+							class="button-like primary no-arrow">See this object’s
 							record at {{ metadataAPIvariables.response.document.institution_name_ssi }}</a>
 					</div>
 

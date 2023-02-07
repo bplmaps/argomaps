@@ -28,7 +28,7 @@
 					</div>
 				</li>
 				<li class="nav-item" data-id="7">
-					<p class="link-like">About</p>
+					<p class="link-like">About ARGO</p>
 					<div class="nav-dropdown">
 						<ul class='dropdown-content'>
 							<li class="item-dropdown "><a href="/about/">About ARGO</a></li>
@@ -55,8 +55,9 @@
 			</div>
 		</nav>
 		<div class="footer-logos">
-			<div class="logo"></div>
-			<!-- <div class="logo"></div> -->
+			<div class="logo"><img src="/images/NBLMEC_logo.png" /></div>
+			<div class="logo"><img src="/images/gwpl_logo.png" /></div>
+			<div class="logo"><img src="/images/nhprc-logo-l.jpg" /></div>
 		</div>
 		<div class="footer-credits" data-embed="Footer: above credits">
 			<div class="credit" data-embed="Footer: credits left area"><p>
@@ -66,7 +67,40 @@
 			</p></div>
 			<div class="credit" data-embed="Footer: credits right area"><p>Exhibition Site by <a href="/">Byte</a></p></div>
 		</div>
-		
+
+    	<Drawer :drawer_results_visible="drawer_results_visible" :maps="maps" />
+
 	</footer>
 
 </template>
+
+<script>
+import Drawer from "~/components/drawer.vue";
+
+export default {
+	components: {
+		Drawer,
+	},
+	data () {
+		return {
+			maps: [],
+			drawer_results_visible: [],
+		}
+	},
+	beforeMount() {
+	},
+    mounted() {
+		// callable from anywhere via emit
+		this.$root.$on('open_drawer', (maps, which_maps) => {
+			this.openDrawer(maps, which_maps);
+		})
+	},
+	methods: {
+		openDrawer: function(maps, which_maps) {
+			// console.log('> footer openDrawer', which_maps);
+			this.maps = maps;
+			this.drawer_results_visible = which_maps;
+		},
+	},
+}
+</script>

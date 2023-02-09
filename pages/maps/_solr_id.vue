@@ -116,9 +116,11 @@ export default {
 			manifestUrl: 'https://collections.leventhalmap.org/search/' + this.$nuxt.context.params.solr_id + '/manifest.json',
 			viewer: {
 				// this area is what's covered by OpenSeadragon: https://openseadragon.github.io/docs/OpenSeadragon.html#.Options
-				// zoomPerScroll: 1, // to make it faster or slower
 				// each of these are per-device-type
-				gestureSettingsMouse: { scrollToZoom: false, clickToZoom: true, dblClickToZoom: true, pinchToZoom: false, flickEnabled: false, dragToPan: true },
+				gestureSettingsMouse: { 
+					scrollToZoom: false, clickToZoom: true, dblClickToZoom: true, 
+					pinchToZoom: false, flickEnabled: false, dragToPan: true 
+				},
 				// gestureSettingsTouch:   { scrollToZoom: false, clickToZoom: false, dblClickToZoom: true,  pinchToZoom: true,  flickEnabled: true,  flickMinSpeed: 120, flickMomentum: 0.25, pinchRotate: false, dragToPan: true },
 				// gestureSettingsPen:     { scrollToZoom: false, clickToZoom: true,  dblClickToZoom: false, pinchToZoom: false, flickEnabled: false, flickMinSpeed: 120, flickMomentum: 0.25, pinchRotate: false, dragToPan: true },
 				// gestureSettingsUnknown: { scrollToZoom: false, clickToZoom: false, dblClickToZoom: true, pinchToZoom: true, flickEnabled: true, flickMinSpeed: 120, flickMomentum: 0.25, pinchRotate: false, dragToPan: true },

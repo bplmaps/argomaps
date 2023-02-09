@@ -13,8 +13,8 @@
 			<div class="campaign">
 				<h1>Explore the Legacy of Our Revolutionary Past</h1>
 				<p>
-					Discover the historical geography of the American Revolutionary War
-					era through maps, rich interpretive essays, and interactives
+					In American Revolutionary Geographies Online, discover the stories, spaces, and people of the 
+					American Revolutionary War era through maps, interpretive essays, and interactives.
 				</p>
 				<div>
 				<form action="/search/" @submit.prevent="searchSubmitFromHomepage">

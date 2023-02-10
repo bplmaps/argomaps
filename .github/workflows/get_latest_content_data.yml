@@ -16,11 +16,21 @@ jobs:
     - uses: actions/checkout@v3
       with:
         ref: 'staging'
-    - name: Use cURL to download JSON
+    - name: Download people JSON
       uses: wei/curl@v1.1.1
       with:
         args: >
-           https://s3.us-east-2.wasabisys.com/lmec-public-files/temp/dummy.json -o data/dummy.json
+           https://argo.stage.diedrick.com/api/people.json -o data/people.json
+    - name: Download maps_extended JSON
+      uses: wei/curl@v1.1.1
+      with:
+        args: >
+           https://argo.stage.diedrick.com/api/maps_extended.json -o data/maps_extended.json
+    - name: Download home_data JSON
+      uses: wei/curl@v1.1.1
+      with:
+        args: >
+           https://argo.stage.diedrick.com/api/home_data.json -o data/home_data.json
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated action"

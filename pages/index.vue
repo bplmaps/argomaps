@@ -13,14 +13,14 @@
 			<div class="campaign">
 				<h1>Explore the Legacy of Our Revolutionary Past</h1>
 				<p>
-					Discover the historical geography of the American Revolutionary War
-					era through maps, rich interpretive essays, and interactives
+					In American Revolutionary Geographies Online, discover the stories, spaces, and people of the 
+					American Revolutionary War era through maps, interpretive essays, and interactives.
 				</p>
 				<div>
 				<form action="/search/" @submit.prevent="searchSubmitFromHomepage">
-					<label for="header-search" class="sr-only">Search</label>
-					<input placeholder="Search" v-model="search_on_homepage" id="header-search" type="text" />
-					<button><em class="fa fa-search"></em></button>
+					<label for="main-search" class="sr-only">Enter search terms</label>
+					<input placeholder="Search" v-model="search_on_homepage" id="main-search" type="text" />
+					<button aria-label="Go"><em class="fa fa-search"></em></button>
 				</form>
 				</div>
 			</div>
@@ -99,7 +99,7 @@
 									{{ timeline_eras[year].era }} &nbsp;
 									<span class="era-years">{{ timeline_eras[year].era_start_year }} - {{ timeline_eras[year].era_end_year }}</span>
 								</div>
-								<img class="era-image" :src="timeline_eras[year].background_image" loading="lazy" />
+								<img class="era-image" :src="timeline_eras[year].background_image" :alt="timeline_eras[year].background_image_alt_tag" loading="lazy" />
 								<div class="era-text" v-html="timeline_eras[year].era_description"></div>
 							</div>
 						</div>
@@ -152,7 +152,7 @@
 							{{ timeline_eras[year].era_end_year }}</span
 						>
 						</div>
-						<img class="era-image" :src="timeline_eras[year].background_image" loading="lazy" />
+						<img class="era-image" :src="timeline_eras[year].background_image" :alt="timeline_eras[year].background_image_alt_tag" loading="lazy" />
 						<div class="era-text" v-html="timeline_eras[year].era_description"></div>
 					</div>
 				</div>
@@ -226,7 +226,7 @@
 			<div class="swiper institutions-swiper">
 				<div class="swiper-wrapper align-bottom">
 					<a @click="openDrawer(tag.solr_ids_array)" v-for="(tag, tag_index) in tag_groups.institution_name_ssi.data" :key="tag_index" class="swiper-slide explore-slide">
-					<img :src="tag.image" loading="lazy" /><br />
+					<img :src="tag.image" :alt="tag.name+' logo'" loading="lazy" /><br />
 					{{ tag.name }}<br />
 					<a class="button-like primary">See {{ tag.count }} maps</a>
 					</a>
@@ -270,7 +270,10 @@ export default {
 	},
 	head() {
 		return {
-			title: "Collection Record",
+			title: "ARGO",
+			meta: [
+				{ description: "Discover the historical geography of the American Revolutionary War era through maps, rich interpretive essays, and interactives" },
+			],
 			script: [
 				{ type: 'text/javascript', src: '/assets/swiper-bundle.min.js', body: true },
 			],
@@ -461,27 +464,27 @@ export default {
 			if (this.show_facet != which) {
 				this.show_facet = which;
 				this.$nextTick(() => {
-				var facets_swiper = new Swiper(
-					".facets-" + which.split("_").join("-") + "-swiper",
-					{
-					slidesPerView: 1,
-					breakpoints: {
-						500: { slidesPerView: 2 },
-						768: { slidesPerView: 3 },
-						900: { slidesPerView: 4 },
-					},
-					spaceBetween: 25,
-					// pagination: {
-					// 	el: ".facets-swiper-pagination",
-					// 	clickable: true,
-					// },
-					navigation: {
-						nextEl: ".facets-swiper-button-next",
-						prevEl: ".facets-swiper-button-prev",
-					},
-					}
-				);
-				console.log(":::", facets_swiper);
+					var facets_swiper = new Swiper(
+						".facets-" + which.split("_").join("-") + "-swiper",
+						{
+						slidesPerView: 1,
+						breakpoints: {
+							500: { slidesPerView: 2 },
+							768: { slidesPerView: 3 },
+							900: { slidesPerView: 4 },
+						},
+						spaceBetween: 25,
+						// pagination: {
+						// 	el: ".facets-swiper-pagination",
+						// 	clickable: true,
+						// },
+						navigation: {
+							nextEl: ".facets-swiper-button-next",
+							prevEl: ".facets-swiper-button-prev",
+						},
+						}
+					);
+					// console.log(":::", facets_swiper);
 				});
 			} else {
 				this.show_facet = null;

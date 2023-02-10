@@ -5,8 +5,8 @@
 			<div class="filter-explore-by">
 				<h1>Explore maps by people</h1>
 				<ul>
+					<li @click="showByFilter('')" :class="(people_filter_by=='') ? 'active' : ''">All</li>
 					<li v-for="people_tag, people_tag_index in people_tags" :key="people_tag_index" @click="showByFilter(people_tag_index)" :class="(people_tag_index==people_filter_by) ? 'active' : ''">{{people_tag.name}}</li>
-					<li @click="showByFilter('')" :class="(people_filter_by=='') ? 'active' : ''">Other Mapmakers</li>
 				</ul>
 				<div class="filter-view-switch">
 					<label for="filter_view_switch">View: </label>
@@ -32,7 +32,7 @@
 						</div>
 						<div class="text">
 							<p>{{person.short_description}}</p>
-							<a @click="openDrawer(person.solr_ids.split(','))" class="button-like dark">See {{person.count}} map{{(person.count==1) ? '' : 's'}}</a>
+							<a v-if="person.solr_ids" @click="openDrawer(person.solr_ids.split(','))" class="button-like dark">See {{person.count}} map{{(person.count==1) ? '' : 's'}}</a>
 							<a :href="'/people/'+person.slug" class="button-like light">Learn more</a>
 						</div>
 					</li>
@@ -41,7 +41,7 @@
 			<!-- show all other untagged people -->
 			<ul v-else :class="'filter-list '+people_filter_view+'-view'">
 				<template v-for="person, person_index in people">
-					<li v-if="!person.people_tag_ids" :key="person_index" class="filter-result" data-id="person.people_tags.hasOwnProperty(1)">
+					<li :key="person_index" class="filter-result" data-id="person.people_tags.hasOwnProperty(1)">
 						<div class="result-image" :style="(person.image) ? 'background-image: url(\''+person.image+'\');' : ''">
 							<ul class="result-tags">
 								<template v-for="people_tag_id, people_tag_index in person.people_tag_ids">
@@ -161,7 +161,7 @@ export default {
 	},
 	data() {
 		return {
-			people_filter_by: 1,
+			people_filter_by: '',
 			people_filter_view: 'gallery',
 			drawer_results_visible: [],
 		}
@@ -183,6 +183,7 @@ export default {
 	},
 	methods: {
 		openDrawer(which_maps) {
+			console.log('??', which_maps);
 			// emit open_drawer in footer
 			this.$root.$emit('open_drawer', this.maps, which_maps) //like this
 		},

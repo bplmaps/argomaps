@@ -98,7 +98,7 @@
 
 <script>
 import Vue from 'vue'
-import home_data from "~/data/home_data.json";
+// import home_data from "~/data/home_data.json";
 import api_keys from "~/data/api_keys.json";
 // import Drawer from "~/components/drawer.vue";
 
@@ -112,7 +112,7 @@ export default {
 	},
 	asyncData({ route }) {
 		return {
-			maps: home_data.maps,
+			// maps: home_data.maps,
 		};
 	},
 	data () {

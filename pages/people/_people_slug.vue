@@ -76,9 +76,9 @@
 			<div class="item-content">
 				<h1>{{ person.name }}</h1>
 				<ul class="filters-applied">
-					<li>Mapmaker</li>
-					<li>Artist</li>
-					<li>Engraver</li>
+					<template v-for="people_tag, people_tag_index in people_tags">
+						<li v-if="typeof person.people_tags =='string' && person.people_tags.indexOf(people_tag_index) != -1" :key="people_tag_index" :class="(people_tag_index==people_filter_by) ? 'active' : ''">{{people_tag.name}}</li>
+					</template>
 				</ul>
 				<article>
 					<p v-if="person.subhead_text"><strong>{{ person.subhead_text }}</strong></p>
@@ -142,7 +142,7 @@ export default {
 			person = people.people[route.params.people_slug];
 			current_slug = person.slug;
 
-			let person_keys = person.people_tag_ids;
+			let person_keys = ('person_keys' in person) ? person.people_tag_ids : [];
 			for (let i=0;i<person_keys.length; i++) {
 				// console.log('>', person_keys[i]);
 				people_tags[person_keys[i]].open = true;
@@ -170,10 +170,9 @@ export default {
 		// this.current_slug = this.person.slug;
 		// this.getData();
 		if (this.person) {
-			let person_keys = this.person.people_tag_ids;
-			console.log('??', person_keys);
+			let person_keys = ('people_tag_ids' in this.person) ? this.person.people_tag_ids : [];
 			for (let i=0;i<person_keys.length; i++) {
-				console.log('>', person_keys[i]);
+				// console.log('>', person_keys[i]);
 				this.people_tags[person_keys[i]].open = true;
 			}
 		}

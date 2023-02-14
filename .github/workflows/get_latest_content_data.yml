@@ -1,0 +1,36 @@
+name: Update content JSON files by pulling from the Diedrick CMS API
+
+on:
+  schedule:
+    - cron:  '0 10 * * *'
+  repository_dispatch:
+    types:
+      - webhook
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: 'staging'
+    - name: Download people JSON
+      uses: wei/curl@v1.1.1
+      with:
+        args: >
+           https://argo.stage.diedrick.com/api/people.json -o data/people.json
+    - name: Download home_data JSON
+      uses: wei/curl@v1.1.1
+      with:
+        args: >
+           https://argo.stage.diedrick.com/api/home_data.json -o data/home_data.json
+    - name: Commit and push if it changed
+      run: |-
+        git config user.name "Automated action"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Latest data: ${timestamp}" || exit 0
+        git push

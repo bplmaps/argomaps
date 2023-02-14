@@ -23,7 +23,7 @@
 
 <script>
 
-import home_data from '~/data/maps_extended.json';
+import home_data from '~/data/home_data.json';
 
 export default {
 	name: 'MapsEverything',

@@ -124,12 +124,13 @@ export default {
 	},
 	head () {
 		return {
-		title: (this.person) ? this.person.name + ' Information' : 'People',
-			meta: [{
-				hid: 'description',
-				name: 'description',
-				content: (this.person) ? 'Detailed information about ' + this.person.name : 'People Description',
-			}]
+			title: (this.person) ? this.person.name + ' Information' : 'People',
+			meta: [
+				{ hid: 'og:title', name: 'og:title', content: (this.person) ? this.person.name + ' - ARGO Maps' : 'ARGO Person Record' },
+				{ hid: 'og:image', name: 'og:image', content: (this.person) ? this.person.header_image : 'https://iiif.digitalcommonwealth.org/iiif/2/commonwealth:w9505r968/250,72,15744,9720/,1200/0/default.jpg' },
+				{ hid: 'og:url', name: 'og:url', content: 'https://www.argomaps.org/people/' + this.current_slug + '/' },
+				{ hid: 'description', name: 'description', content: (this.person) ? 'Detailed information about ' + this.person.name : 'People Description'},
+			]
 		}
     },
 	asyncData ({ route }) {

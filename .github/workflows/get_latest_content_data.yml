@@ -21,11 +21,6 @@ jobs:
       with:
         args: >
            https://argo.stage.diedrick.com/api/people.json -o data/people.json
-    - name: Download maps_extended JSON
-      uses: wei/curl@v1.1.1
-      with:
-        args: >
-           https://argo.stage.diedrick.com/api/maps_extended.json -o data/maps_extended.json
     - name: Download home_data JSON
       uses: wei/curl@v1.1.1
       with:

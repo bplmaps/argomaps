@@ -142,14 +142,13 @@ export default {
   name: "MapsPage",
   head() {
     return {
-      title: "Collection Record",
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: "Detailed information about Maps description",
-        },
-      ],
+		title: (this.metadataAPIvariables) ? this.metadataAPIvariables.response.document.title_info_primary_tsi + ' - ARGO Maps' : 'ARGO Collection Record',
+		meta: [
+			{ hid: 'og:title', name: 'og:title', content: (this.metadataAPIvariables) ? this.metadataAPIvariables.response.document.title_info_primary_tsi + ' - ARGO Maps' : 'ARGO Collection Record' },
+			{ hid: 'og:image', name: 'og:image', content: (this.metadataAPIvariables) ? 'https://bpldcassets.blob.core.windows.net/derivatives/images/' + this.metadataAPIvariables.response.document.exemplary_image_ssi + '/image_thumbnail_300.jpg' : 'https://iiif.digitalcommonwealth.org/iiif/2/commonwealth:w9505r968/250,72,15744,9720/,1200/0/default.jpg' },
+			{ hid: 'og:url', name: 'og:url', content: 'https://www.argomaps.org/maps/' + this.$nuxt.context.params.solr_id + '/' },
+			{ hid: 'description', name: 'description', content: (this.metadataAPIvariables) ? 'Detailed information about ' + this.$nuxt.context.params.solr_id + ': ' + this.metadataAPIvariables.response.document.title_info_primary_tsi : 'People Description',}
+		],
     };
   },
   components: {
